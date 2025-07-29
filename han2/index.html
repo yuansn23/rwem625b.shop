@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>
+ function r2() {
+        window.location.href="https://www.qq.com";
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>홍춘욱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #004080;
+            --accent-orange: #FF6600;
+            --light-orange: #FF8533;
+            --text-black: #000000;
+            --bg-dark: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 50%, var(--text-black) 100%);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .hero-highlight {
+            color: var(--accent-orange);
+            display: block;
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 1rem;
+        }
+
+        .doctor-image {
+            width: 320px;
+            height: 320px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 5px solid var(--accent-orange);
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .bio-section {
+            background: var(--bg-dark);
+            margin: 2rem 0;
+            border-radius: 20px;
+            padding: 3rem 2rem;
+        }
+
+        .bio-text {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(145deg, var(--secondary-blue), var(--primary-blue));
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid var(--accent-orange);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(255, 102, 0, 0.3);
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .benefit-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--accent-orange), var(--light-orange));
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 2rem auto;
+            display: block;
+            min-width: 250px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.6);
+            background: linear-gradient(45deg, var(--light-orange), var(--accent-orange));
+        }
+
+        .countdown-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .countdown-text {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 102, 0, 0.2);
+            border: 2px solid var(--accent-orange);
+            border-radius: 10px;
+            padding: 1rem;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .countdown-item span {
+            display: block;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: bold;
+            color: var(--accent-orange);
+        }
+
+        .countdown-label {
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            color: var(--white);
+            margin-top: 0.5rem;
+        }
+
+        .social-proof {
+            background: var(--secondary-blue);
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .proof-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 102, 0, 0.3);
+        }
+
+        .proof-stats {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--accent-orange);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .proof-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, var(--accent-orange), var(--light-orange));
+            color: var(--white);
+            border: none;
+            padding: 2rem 4rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.6);
+            animation: pulse 2s infinite;
+            white-space: nowrap;
+            text-align: center;
+            min-width: 360px;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+
+        .final-cta {
+            background: var(--text-black);
+            text-align: center;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .final-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--accent-orange);
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .final-text {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .disclaimer {
+            background: var(--bg-dark);
+            padding: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #cccccc;
+            border-top: 2px solid var(--accent-orange);
+            margin-bottom: 100px;
+        }
+
+        .disclaimer-title {
+            color: var(--accent-orange);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 1rem;
+                min-height: 100vh;
+            }
+
+            .hero-title {
+                margin-bottom: 1rem;
+            }
+
+            .countdown-container {
+                margin: 1rem 0;
+            }
+
+            .countdown-timer {
+                gap: 0.5rem;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 0.8rem 0.5rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+            
+            .doctor-image {
+                width: 250px;
+                height: 300px;
+                margin: 1rem 0;
+            }
+            
+            .floating-button {
+                bottom: 10px;
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">
+            <span class="hero-highlight">하늘 박사님을 팔로우하세요</span>
+           이번 달의 투자 전략을 알아보세요
+        </h1>
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+            <div class="countdown-text">특별 혜택 마감까지</div>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <span id="days">02</span>
+                    <div class="countdown-label">일</div>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <div class="countdown-label">시간</div>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <div class="countdown-label">분</div>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <div class="countdown-label">초</div>
+                </div>
+            </div>
+        </div>
+        
+        <img src="img/1.jpg" alt="홍준욱 박사" class="doctor-image">
+        <button class="cta-button" onclick="r2()">독점 투자 전략 받기</button>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="section">
+        <div class="bio-section">
+            <h2 class="section-title">존경받는 경제학자</h2>
+            <p class="bio-text">
+                홍준욱 박사는 25년 이상의 경력을 가진 존경받는 경제학자입니다. 
+                『환율의 미래』와 『프랑스 여행』 등 약 10권의 베스트셀러 저자로서 경제학 분야에 깊이 전념하고 있습니다. 
+                그의 통찰력과 분석은 투자계에서 광범위하게 환영받으며, 수많은 투자자들이 재정 목표를 달성하도록 도왔습니다.
+            </p>
+            <button class="cta-button" onclick="r2()">독점 투자 전략 받기</button>
+        </div>
+    </section>
+
+    <!-- Community Benefits Section -->
+    <section class="section">
+        <h2 class="section-title">커뮤니티 특별 혜택</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3 class="benefit-title">투자 철학 공개</h3>
+                <p class="benefit-text">홍 박사가 38년 투자 경력에서 얻은 소중한 노하우, 특히 "주식으로 주식 손실을 보전하는" 철학을 공유하여 투자에 더욱 확신을 가질 수 있게 해드립니다.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">3단계 계좌 관리법</h3>
+                <p class="benefit-text">장기, 중기, 탐색 계좌에 적용되는 차별화된 거래 전략으로 다양한 시장 상황에서 유연하게 대응하고 투자 수익을 최적화할 수 있습니다.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">주식 집중 전략</h3>
+                <p class="benefit-text">HTS 인기주를 활용하여 홍 박사가 고점 추매를 피하고 진정한 잠재력을 가진 투자 기회에 집중하는 방법을 가르쳐드립니다.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">업종별 투자 전략</h3>
+                <p class="benefit-text">교통운수, 바이오, IT 등 전망이 밝은 업종을 심층 분석하여 홍 박사가 우량 기업 주식을 선택하고 투자 성공률을 높이는 방법을 안내합니다.</p>
+            </div>
+        </div>
+        <img src="img/2.jpg" alt="투자 전략" style="width: 100%; max-width: 600px; margin: 2rem auto; display: block; border-radius: 15px;">
+        <button class="cta-button" onclick="r2()">수익 비결 잠금 해제</button>
+    </section>
+
+    <!-- Exclusive Benefits Section -->
+    <section class="section">
+        <h2 class="section-title">전용 혜택</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3 class="benefit-title">수익 비결</h3>
+                <p class="benefit-text">상세한 투자 전략과 종목 선정 기준으로 시장 흐름을 파악하고 이상적인 수익을 실현할 수 있도록 도와드립니다.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">우승 경험 공유</h3>
+                <p class="benefit-text">홍 박사가 투자 대회에서의 실용적인 거래 타이밍과 기법을 공유하여 실전에서 도움이 되도록 해드립니다.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">개인 맞춤형 포트폴리오 제안</h3>
+                <p class="benefit-text">개인의 투자 상황에 따라 전문가가 맞춤형 투자 전략을 제공하여 포트폴리오가 목표와 일치하도록 보장합니다.</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">도서 핵심 요약</h3>
+                <p class="benefit-text">홍 박사 도서의 핵심 전략을 엄선하여 투자 정수를 빠르게 습득할 수 있도록 도와드립니다.</p>
+            </div>
+        </div>
+        <img src="img/3.jpg" alt="전문 분석" style="width: 100%; max-width: 600px; margin: 2rem auto; display: block; border-radius: 15px;">
+        <button class="cta-button" onclick="r2()">한정 인원, 기회를 잡으세요</button>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <h2 class="section-title">실제 참여자 현황</h2>
+        <div class="proof-grid">
+            <div class="proof-item">
+                <div class="proof-stats">2,847명</div>
+                <div class="proof-text">
+                    이번 달 투자 전략<br>
+                    참여자 수
+                </div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-stats">89%</div>
+                <div class="proof-text">
+                    참여자 만족도<br>
+                    (5점 만점 4.5점)
+                </div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-stats">156명</div>
+                <div class="proof-text">
+                    오늘 신규 가입<br>
+                    참여자 수
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <h2 class="final-title">지금 시작하세요!</h2>
+        <p class="final-text">
+            수익 비결을 얻을 수 있는 절호의 기회입니다. 무료 참여 신청을 진심으로 초대하며, 
+            인원이 한정되어 선착순 300명만 가능합니다! 투자 미래를 바꿀 수 있는 이 기회를 놓치지 마세요!
+        </p>
+        <p class="final-text" style="font-size: 1.8rem; color: var(--accent-orange); font-weight: bold;">
+            "2"를 보내시면 상승하는 주식 한 종목을 받고 새로운 투자 여정을 시작하세요!
+        </p>
+        <button class="cta-button" onclick="r2()" style="font-size: 1.5rem; padding: 1.5rem 3rem;">지금 시작하기</button>
+    </section>
+
+    <!-- Floating Button -->
+    <button class="floating-button" onclick="r2()">
+        "2" 전송하여 상승주 받기
+    </button>
+
+    <!-- Disclaimer -->
+    <footer class="disclaimer">
+        <div class="disclaimer-title">위험 고지 및 면책사항</div>
+        <p>투자는 원금 손실의 위험이 있습니다. 과거 투자 성과가 미래 수익을 보장하지 않습니다. 모든 투자 결정은 개인의 책임이며, 투자 전 충분한 검토와 전문가 상담을 권장합니다.</p>
+        <br>
+        <p>본 서비스는 교육 목적의 투자 정보 제공 서비스이며, 개별 투자 권유나 매매 추천이 아닙니다. 제공되는 정보는 일반적인 투자 전략에 관한 것으로, 개인의 재정 상황이나 투자 목표를 고려하지 않았습니다.</p>
+        <br>
+        <p>투자 결과에 대한 책임은 전적으로 투자자 본인에게 있으며, 당사는 투자 손실에 대해 책임지지 않습니다. 투자 전 반드시 관련 위험을 충분히 이해하고 신중히 판단하시기 바랍니다.</p>
+        <br>
+        <p>본 광고는 금융투자업법 및 관련 규정을 준수하며, 허위 또는 과장된 정보를 포함하지 않습니다. 문의사항이 있으시면 고객센터로 연락해 주시기 바랍니다.</p>
+    </footer>
+
+    <script>
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Countdown Timer
+        let targetTime = new Date().getTime() + (2 * 24 * 60 * 60 * 1000); // 2 days from now
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetTime - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const daysElement = document.getElementById("days");
+                const hoursElement = document.getElementById("hours");
+                const minutesElement = document.getElementById("minutes");
+                const secondsElement = document.getElementById("seconds");
+
+                if (daysElement) daysElement.textContent = String(days).padStart(2, '0');
+                if (hoursElement) hoursElement.textContent = String(hours).padStart(2, '0');
+                if (minutesElement) minutesElement.textContent = String(minutes).padStart(2, '0');
+                if (secondsElement) secondsElement.textContent = String(seconds).padStart(2, '0');
+            }
+        }
+
+        // Start countdown immediately when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+        
+        // Also start if DOM is already loaded
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Placeholder for r2() function
+       
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to floating button
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const floatingButton = document.querySelector('.floating-button');
+            
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                floatingButton.style.transform = 'translateX(-50%) translateY(10px)';
+            } else {
+                // Scrolling up
+                floatingButton.style.transform = 'translateX(-50%) translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
