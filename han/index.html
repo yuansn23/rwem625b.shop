@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>
+  function r2() {
+          window.location.href="https://www.qq.com";
+        }
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>남석관 투자 교류 커뮤니티</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --deep-blue: #0f172a;
+            --accent-orange: #f97316;
+            --pure-white: #ffffff;
+            --text-black: #000000;
+            --gradient-blue: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-black);
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: var(--gradient-blue);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: var(--pure-white);
+            padding: 2rem 1rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--pure-white), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .highlight-text {
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-orange);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .cta-button {
+            background: #22c55e;
+            color: var(--pure-white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin: 1rem 0;
+        }
+
+        .cta-button:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+        }
+
+        .section {
+            padding: 5rem 1rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-blue);
+        }
+
+        .profile-section {
+            background: var(--pure-white);
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .achievement-card {
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-orange);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .benefits-section {
+            background: #f8fafc;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: var(--pure-white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        .floating-button {
+            background: #22c55e;
+            color: var(--pure-white);
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+            white-space: nowrap;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+        .footer {
+            background: var(--deep-blue);
+            color: var(--pure-white);
+            padding: 3rem 1rem 1rem;
+            text-align: center;
+        }
+
+        .disclaimer {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+                margin-bottom: 5px;
+            }
+
+            .subtitle {
+                margin-bottom: 5px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+                margin: 5px 0;
+            }
+
+            .stat-item {
+                padding: 0.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            .profile-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 5px;
+            }
+
+            .achievement-card, .benefit-card {
+                padding: 1rem;
+                margin-bottom: 5px;
+            }
+
+            .cta-button {
+                margin: 5px 0;
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            .floating-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            p {
+                margin-bottom: 5px;
+            }
+
+            h3 {
+                margin-bottom: 5px;
+            }
+        }
+
+        .dark {
+            color: var(--pure-white);
+        }
+    </style>
+</head>
+<body>
+    <!-- 히어로 섹션 -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="main-title">남석관</h1>
+                <h2 class="subtitle">투자 교류 커뮤니티</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    <span class="highlight-text">38년 투자 경험</span>을 가진 전문 투자자가<br>
+                    3년 만에 <span class="highlight-text">2,500% 수익률</span>을 달성한 비법을 공개합니다.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">38년</div>
+                        <div class="stat-label">투자 경험</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2500%</div>
+                        <div class="stat-label">3년 수익률</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5회</div>
+                        <div class="stat-label">대회 1위</div>
+                    </div>
+                </div>
+                
+                <button class="cta-button" onclick="r2()">지금 바로 참여하기</button>
+            </div>
+            <div class="hero-image">
+                <img src="img/1.jpg" alt="남석관 투자 전문가">
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로필 섹션 -->
+    <section class="section profile-section">
+        <div class="section-container">
+            <h2 class="section-title">투자계의 전설적 인물</h2>
+            <div class="profile-content">
+                <div>
+                    <img src="img/2.jpg" alt="남석관" style="width: 100%; border-radius: 15px;">
+                </div>
+                <div>
+                    <h3 style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 1rem;">남석관</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                        • 20년 경력의 전문 투자가<br>
+                        • 한양대학교 상경대학 석사 학위<br>
+                        • 1960년생<br>
+                        • 전설적인 "슈퍼 개미"
+                    </p>
+                    <button class="cta-button" onclick="r2()">투자 비법 확인하기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 성과 섹션 -->
+    <section class="section" style="background: #f8fafc;">
+        <div class="section-container">
+            <h2 class="section-title">검증된 투자 성과</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🥇</div>
+                    <h3 class="achievement-title">5대 증권사 실전투자대회 1위</h3>
+                    <p>2007년, 2012년, 2014년, 2018년, 2021년 억클럽 수상자:<br>
+                    2014년 삼성증권 1위, 2021년 미래에셋 1위</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">📈</div>
+                    <h3 class="achievement-title">과거 3년 수익률 2500%</h3>
+                    <p>1,000만원 시드머니로 시작하여 경험이 풍부한 전업투자자로 성장</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">📚</div>
+                    <h3 class="achievement-title">베스트셀러 작가</h3>
+                    <p>《실전투자 정수》(2018), 《주식투자, 평생 재산 만들기》(2021)</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🎓</div>
+                    <h3 class="achievement-title">한양대학교 상경대학 금융투자학과</h3>
+                    <p>체계적 이론과 38년 실전 경험의 완벽한 결합</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="cta-button" onclick="r2()">성과 자료 더 보기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 수익률 증명 섹션 -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">2500% 투자 수익률 달성 증명</h2>
+            <div style="text-align: center; margin: 3rem 0;">
+                <img src="img/3.jpg" alt="투자 성과 증명" style="max-width: 100%; border-radius: 15px;">
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+                1,000만원 시드머니로 시작하여 3년간 달성한 놀라운 수익률입니다.<br>
+                체계적인 계좌 분류와 리스크 관리로 안정적 고수익을 실현했습니다.
+            </p>
+            <div style="text-align: center;">
+                <button class="cta-button" onclick="r2()">투자 전략 공개받기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 혜택 섹션 -->
+    <section class="section benefits-section">
+        <div class="section-container">
+            <h2 class="section-title">커뮤니티 특별 혜택</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📋</div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">남석관의 투자 철학 완전 공개</h3>
+                    <p>"주식으로 주식 손실을 메꾸자" - 38년 투자 노하우와 계좌분류 전략</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">3단계 계좌 관리법</h3>
+                    <p>장기, 중기, 탐색 계좌별 차별화된 매매 전략과 리스크 관리 시스템</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">시장 중심 종목 집중 전략</h3>
+                    <p>HTS 인기종목 활용법 및 추격매수 금지 원칙</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">특정 업종 투자 전략</h3>
+                    <p>운송, 바이오, IT 등 유망 업종 분석 및 기업 중심 종목 선별법</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="cta-button" onclick="r2()">전체 혜택 확인하기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 마지막 CTA 섹션 -->
+    <section class="section" style="background: var(--gradient-blue); color: var(--pure-white);">
+        <div class="section-container" style="text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">지금 바로 시작하세요</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 3rem;">
+                38년 투자 지식과 2,500% 수익률 비법을 공유하는 특별한 기회입니다.
+            </p>
+            <button class="cta-button" onclick="r2()" style="font-size: 1.3rem; padding: 1.2rem 3rem;">
+                무료 참여 신청하기
+            </button>
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                ⏰ 한정 모집, 선착순 300명만 참여 가능
+            </p>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="disclaimer">
+            <strong>위험 고지:</strong> 투자에는 원금 손실의 위험이 있습니다. 과거 수익률이 미래 수익률을 보장하지 않으며, 
+            모든 투자 결정은 개인의 책임입니다. 본 정보는 투자 권유가 아닌 교육 목적으로 제공됩니다. 
+            투자 전 충분한 검토와 전문가 상담을 받으시기 바랍니다. 금융투자상품은 예금자보호법에 따라 예금보험공사가 보호하지 않습니다.
+        </div>
+         
+        <p style="font-size: 0.8rem; opacity: 0.6;">
+            © 2025 남석관 투자 교류 커뮤니티. All rights reserved.
+        </p>
+    </footer>
+
+    <!-- 떠다니는 CTA 버튼 -->
+    <div class="floating-cta">
+        <button class="floating-button" onclick="r2()">
+            "3" 발송 시 상승 종목 1개 증정
+        </button>
+    </div>
+
+    <script>
+        // 다크모드 지원
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // r2 함수 (사용자가 정의해야 함)
+      
+        // 스크롤 시 부드러운 애니메이션
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // 애니메이션 적용할 요소들 선택
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.achievement-card, .benefit-card, .stat-item');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
