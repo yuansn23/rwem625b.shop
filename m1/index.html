@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+function G7() {
+            // Replace with actual WhatsApp link
+            window.open('https://chat.whatsapp.com/FfchdGTq9q0DVIbkivcE30', '_blank');
+        }
+
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AI Stock Analysis 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: 
+                linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 30px 30px; }
+        }
+        
+        .pulse-button {
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(239, 68, 68, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.6);
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ef4444);
+            background-size: 200% 100%;
+            animation: progressShine 2s linear infinite;
+        }
+        
+        @keyframes progressShine {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        .testimonial-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .testimonial-card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-elements::before {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-elements::after {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @media (max-width: 768px) {
+            .floating-elements::before,
+            .floating-elements::after {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-900 text-white relative overflow-x-hidden floating-elements">
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 neon-text bg-gradient-to-r from-blue-400 via-purple-500 to-red-500 bg-clip-text text-transparent">
+                Most Powerful Stock Analysis AI 2025
+            </h1>
+            
+            <!-- Profile Image -->
+            <div class="flex justify-center mb-8">
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg shadow-blue-500/50">
+                    <img src="img/1.jpg" alt="AI Expert" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-4">
+                Our AI system completes analysis in <span class="text-yellow-400 font-bold">1.5 seconds</span>
+            </p>
+            <p class="text-lg text-green-400 font-semibold">
+                <span class="animate-pulse">🔥</span> Currently <span class="text-yellow-400">46,863</span> users are viewing complete reports for FREE!
+            </p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="max-w-2xl mx-auto mb-16">
+            <div class="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 shadow-2xl">
+                <div class="mb-6">
+                    <label class="block text-lg font-medium mb-3 text-gray-300">Enter Your Company Name or Stock Symbol</label>
+                    <input type="text" id="stockInput" placeholder="e.g., AAPL, Tesla, Microsoft..." 
+                           class="w-full p-4 text-base bg-gray-700 border border-gray-600 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400">
+                </div>
+                
+                <button onclick="startAnalysis()" class="w-full bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-lg text-lg pulse-button transition-all duration-300">
+                    🔍 Start Data Search
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Modal -->
+        <div id="progressModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
+            <div class="bg-gray-800 rounded-2xl p-8 max-w-md w-full mx-4 border border-gray-700 relative">
+                <button onclick="closeProgressModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl font-bold">×</button>
+                <div class="text-center mb-6">
+                    <div class="text-2xl mb-4">🤖 AI Analysis in Progress</div>
+                    <div id="progressText" class="text-blue-400 font-semibold mb-4">Initializing AI system...</div>
+                </div>
+                
+                <div class="w-full bg-gray-700 rounded-full h-3 mb-6">
+                    <div id="progressBar" class="progress-bar h-3 rounded-full w-0 transition-all duration-300"></div>
+                </div>
+                
+                <div id="analysisSteps" class="space-y-2 text-sm text-gray-300">
+                    <div class="flex items-center opacity-50">
+                        <span class="w-2 h-2 bg-gray-500 rounded-full mr-3"></span>
+                        Market Data Analysis
+                    </div>
+                    <div class="flex items-center opacity-50">
+                        <span class="w-2 h-2 bg-gray-500 rounded-full mr-3"></span>
+                        Latest News Analysis
+                    </div>
+                    <div class="flex items-center opacity-50">
+                        <span class="w-2 h-2 bg-gray-500 rounded-full mr-3"></span>
+                        Historical Data Analysis
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Modal -->
+        <div id="resultModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
+            <div class="bg-gray-800 rounded-2xl p-8 max-w-md w-full mx-4 border border-gray-700 relative">
+                <button onclick="closeResultModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl font-bold">×</button>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">✅</div>
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">Analysis Report Ready!</h3>
+                    <p class="text-gray-300 mb-6">
+                        To get your detailed stock report, please add our AI assistant. 
+                        You'll also receive today's recommended 3 premium stocks.
+                    </p>
+                    <p class="text-blue-400 font-semibold mb-6">Details available on WhatsApp</p>
+                    
+                    <button onclick="G7()" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-lg text-lg pulse-button transition-all duration-300">
+                        📱 Get Full Report on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 neon-text">
+                How AI-Based Stock Analysis Works
+            </h2>
+            <p class="text-center text-gray-300 mb-12 text-lg max-w-3xl mx-auto">
+                We leverage cutting-edge technology to analyze market trends and predict future prospects.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400">Market Data Analysis</h3>
+                    <p class="text-gray-300">
+                        Analyzes vast amounts of market data and derives meaningful insights from indicators such as price patterns, volume changes, and market sentiment.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-purple-500 transition-all duration-300">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold mb-3 text-purple-400">Machine Learning Algorithms</h3>
+                    <p class="text-gray-300">
+                        Our proprietary algorithms learn from historical stock price data to understand complex market patterns and predict future trends.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-red-500 transition-all duration-300">
+                    <div class="text-4xl mb-4">📰</div>
+                    <h3 class="text-xl font-bold mb-3 text-red-400">News & Sentiment Analysis</h3>
+                    <p class="text-gray-300">
+                        We analyze the latest news, social media trends, and analyst opinions to identify factors that may affect stock prices.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 neon-text">User Success Stories</h2>
+            <div class="max-w-2xl mx-auto">
+                <div id="testimonialContainer" class="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 border border-gray-700 min-h-32">
+                    <!-- Testimonials will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Disclaimer -->
+        <div class="bg-yellow-900/30 border-l-4 border-yellow-400 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-yellow-400 mb-4">⚠️ Important Risk Disclosure</h3>
+            <div class="text-gray-300 space-y-2">
+                <p>* This service is for informational purposes only and does not provide investment advisory services or financial product trading services.</p>
+                <p>* The information provided is for reference only and should not be used as the basis for investment decisions.</p>
+                <p>* Final investment decision risks are borne by you alone.</p>
+                <p>* Data accuracy is not guaranteed.</p>
+                <p>* Past performance does not guarantee future results. All investments carry risk of loss.</p>
+                <p>* Please consult with a qualified financial advisor before making investment decisions.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Testimonials data
+        const testimonials = [
+            {
+                name: "Sarah Johnson",
+                location: "New York, NY",
+                text: "The AI analysis helped me identify undervalued stocks. The insights are incredibly detailed and accurate!",
+                avatar: "👩‍💼"
+            },
+            {
+                name: "Michael Chen",
+                location: "San Francisco, CA", 
+                text: "I've been using this for 3 months. The market trend predictions have been spot-on. Highly recommended!",
+                avatar: "👨‍💻"
+            },
+            {
+                name: "Emma Rodriguez",
+                location: "Los Angeles, CA",
+                text: "As a beginner investor, this AI tool gave me the confidence to make informed decisions. Great educational value!",
+                avatar: "👩‍🎓"
+            }
+        ];
+
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            const container = document.getElementById('testimonialContainer');
+            const testimonial = testimonials[index];
+            
+            container.innerHTML = `
+                <div class="testimonial-card active">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-3xl">${testimonial.avatar}</div>
+                        <div class="flex-1">
+                            <p class="text-gray-300 mb-3 italic">"${testimonial.text}"</p>
+                            <div class="text-blue-400 font-semibold">${testimonial.name}</div>
+                            <div class="text-gray-500 text-sm">${testimonial.location}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function rotateTestimonials() {
+            showTestimonial(currentTestimonial);
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        }
+
+        // Start testimonial rotation
+        rotateTestimonials();
+        setInterval(rotateTestimonials, 3000);
+
+        function startAnalysis() {
+            const input = document.getElementById('stockInput').value.trim();
+            if (!input) {
+                showCustomAlert('Please enter a company name or stock symbol');
+                return;
+            }
+
+            const modal = document.getElementById('progressModal');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const steps = document.querySelectorAll('#analysisSteps .flex');
+            
+            // Reset progress bar and steps
+            progressBar.style.width = '0%';
+            steps.forEach(step => {
+                step.classList.remove('opacity-100', 'text-blue-400', 'text-purple-400', 'text-green-400');
+                step.classList.add('opacity-50');
+                step.querySelector('span').className = 'w-2 h-2 bg-gray-500 rounded-full mr-3';
+            });
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            let stepIndex = 0;
+            const stepTexts = [
+                'Analyzing Market Data...',
+                'Processing Latest News...',
+                'Analyzing Historical Data...'
+            ];
+            const stepColors = ['blue', 'purple', 'green'];
+            
+            // Execute first step immediately
+            function executeStep() {
+                const progress = ((stepIndex + 1) / 3) * 100;
+                progressBar.style.width = Math.min(progress, 100) + '%';
+                
+                progressText.textContent = stepTexts[stepIndex];
+                steps[stepIndex].classList.remove('opacity-50');
+                steps[stepIndex].classList.add('opacity-100', `text-${stepColors[stepIndex]}-400`);
+                steps[stepIndex].querySelector('span').classList.remove('bg-gray-500');
+                steps[stepIndex].querySelector('span').classList.add(`bg-${stepColors[stepIndex]}-400`);
+                
+                stepIndex++;
+                
+                if (stepIndex >= 3) {
+                    progressBar.style.width = '100%';
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
+                        document.getElementById('resultModal').classList.remove('hidden');
+                        document.getElementById('resultModal').classList.add('flex');
+                    }, 500);
+                } else {
+                    setTimeout(executeStep, 1000);
+                }
+            }
+            
+            // Start immediately
+            executeStep();
+        }
+
+        function showCustomAlert(message) {
+            const alertModal = document.createElement('div');
+            alertModal.className = 'fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50';
+            alertModal.innerHTML = `
+                <div class="bg-gray-800 rounded-2xl p-6 max-w-sm w-full mx-4 border border-gray-700">
+                    <div class="text-center">
+                        <div class="text-yellow-400 text-3xl mb-4">⚠️</div>
+                        <p class="text-gray-300 mb-6">${message}</p>
+                        <button onclick="this.closest('.fixed').remove()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg">OK</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(alertModal);
+        }
+
+        
+        function closeProgressModal() {
+            const modal = document.getElementById('progressModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function closeResultModal() {
+            const modal = document.getElementById('resultModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('fixed')) {
+                const modals = document.querySelectorAll('.fixed');
+                modals.forEach(modal => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                });
+            }
+        });
+
+        // Prevent zoom
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        });
+
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(e) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
