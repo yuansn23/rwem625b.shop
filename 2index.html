@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AI Stock Picks - Personalized Investment Insights</title>
+     <link rel="stylesheet" href="css/821.css">
+</head>
+<body class="application-container-master">
+    <div class="content-wrapper-primary">
+        <div class="hero-section-container">
+            <div class="profile-image-wrapper-animated">
+                <img src="IMG/11.jpg" alt="AI Stock Analysis" class="profile-image-element-breathing">
+            </div>
+            <h1 class="headline-primary-text">Discover Today's AI-Predicted Stock Picks</h1>
+            <p class="subtitle-secondary-text">Get your personalized stock insights by answering 3 quick questions</p>
+        </div>
+
+        <div class="form-container-interactive">
+            <div class="progress-indicator-wrapper">
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill-element" id="progressBarFillElement"></div>
+                </div>
+                <div class="progress-text-indicator" id="progressTextIndicator">Question 1 of 3</div>
+            </div>
+
+            <div class="question-section-container active-state-visible" id="questionOneContainer">
+                <h2 class="question-title-heading">Q1: What is your current investment experience?</h2>
+                <ul class="options-list-container">
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question1" value="A" id="q1a" class="radio-input-hidden">
+                        <label for="q1a" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            A. I'm just getting started
+                        </label>
+                    </li>
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question1" value="B" id="q1b" class="radio-input-hidden">
+                        <label for="q1b" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            B. I have some experience, looking for better tools
+                        </label>
+                    </li>
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question1" value="C" id="q1c" class="radio-input-hidden">
+                        <label for="q1c" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            C. I'm experienced and want more efficient picks
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question-section-container" id="questionTwoContainer">
+                <h2 class="question-title-heading">Q2: What type of stocks are you most interested in?</h2>
+                <ul class="options-list-container">
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question2" value="A" id="q2a" class="radio-input-hidden">
+                        <label for="q2a" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            A. Growth & tech stocks
+                        </label>
+                    </li>
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question2" value="B" id="q2b" class="radio-input-hidden">
+                        <label for="q2b" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            B. Blue-chip / stable companies
+                        </label>
+                    </li>
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question2" value="C" id="q2c" class="radio-input-hidden">
+                        <label for="q2c" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            C. Hot trends / short-term movers
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question-section-container" id="questionThreeContainer">
+                <h2 class="question-title-heading">Q3: Would you like to receive daily AI stock picks?</h2>
+                <ul class="options-list-container">
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question3" value="A" id="q3a" class="radio-input-hidden">
+                        <label for="q3a" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            A. Yes, the sooner the better
+                        </label>
+                    </li>
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question3" value="B" id="q3b" class="radio-input-hidden">
+                        <label for="q3b" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            B. I want to see today's pick first
+                        </label>
+                    </li>
+                    <li class="option-item-wrapper">
+                        <input type="radio" name="question3" value="C" id="q3c" class="radio-input-hidden">
+                        <label for="q3c" class="option-label-interactive">
+                            <div class="radio-visual-indicator"></div>
+                            C. I'm interested but want to learn more
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="completion-section-container" id="completionSectionContainer">
+                <h2 class="completion-title-heading">Thank you for your answers!</h2>
+                <p class="completion-description-text">To receive your personalized AI stock picks and real-time buy/sell signals, please connect with our team via WhatsApp below</p>
+                <button class="action-button-primary" onclick="kma()">See My AI Stock Pick</button>
+            </div>
+        </div>
+
+        <div class="disclaimer-section-footer">
+            <div class="disclaimer-title-warning">Important Risk Disclosure</div>
+            <ul class="disclaimer-content-list">
+                <li class="disclaimer-item-bullet">This service only provides general market information and does not constitute any investment advice or recommendations.</li>
+                <li class="disclaimer-item-bullet">Financial markets involve risks, and you may lose some or all of your investment principal.</li>
+                <li class="disclaimer-item-bullet">All examples shown are historical data analysis and do not constitute any guarantee of future returns.</li>
+                <li class="disclaimer-item-bullet">Investors should make prudent decisions based on their own risk tolerance.</li>
+                <li class="disclaimer-item-bullet">All information is objective factual statement and does not constitute investment advice.</li>
+            </ul>
+            <div class="legal-links-container">
+                <a href="policy.html" class="legal-link-element" target="_blank">Privacy Policy</a>
+                <a href="terms.html" class="legal-link-element" target="_blank">Terms of Service</a>
+				   <a href="Disclaimer.html" class="legal-link-element" target="_blank">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class FormProgressionManager {
+            constructor() {
+                this.currentQuestionIndex = 1;
+                this.totalQuestions = 3;
+                this.initializeEventListeners();
+                this.updateProgressIndicator();
+            }
+
+            initializeEventListeners() {
+                document.querySelectorAll('input[name="question1"]').forEach(input => {
+                    input.addEventListener('change', () => this.handleQuestionOneChange());
+                });
+
+                document.querySelectorAll('input[name="question2"]').forEach(input => {
+                    input.addEventListener('change', () => this.handleQuestionTwoChange());
+                });
+
+                document.querySelectorAll('input[name="question3"]').forEach(input => {
+                    input.addEventListener('change', () => this.handleQuestionThreeChange());
+                });
+            }
+
+            handleQuestionOneChange() {
+                setTimeout(() => {
+                    this.hideCurrentQuestion('questionOneContainer');
+                    this.showQuestionContainer('questionTwoContainer');
+                    this.currentQuestionIndex = 2;
+                    this.updateProgressIndicator(false, false, 33.33); // Q1 answered = 33.33%
+                }, 300);
+            }
+
+            handleQuestionTwoChange() {
+                setTimeout(() => {
+                    this.hideCurrentQuestion('questionTwoContainer');
+                    this.showQuestionContainer('questionThreeContainer');
+                    this.currentQuestionIndex = 3;
+                    this.updateProgressIndicator(false, false, 66.67); // Q2 answered = 66.67%
+                }, 300);
+            }
+
+            handleQuestionThreeChange() {
+                setTimeout(() => {
+                    this.hideCurrentQuestion('questionThreeContainer');
+                    this.showCompletionSection();
+                    this.updateProgressIndicator(true);
+                }, 300);
+            }
+
+            hideCurrentQuestion(containerId) {
+                const currentContainer = document.getElementById(containerId);
+                if (currentContainer) {
+                    currentContainer.classList.remove('active-state-visible');
+                }
+            }
+
+            showQuestionContainer(containerId) {
+                const targetContainer = document.getElementById(containerId);
+                if (targetContainer) {
+                    targetContainer.classList.add('active-state-visible');
+                    targetContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }
+
+            showCompletionSection() {
+                const completionSection = document.getElementById('completionSectionContainer');
+                if (completionSection) {
+                    completionSection.classList.add('active-state-visible');
+                    completionSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }
+
+            updateProgressIndicator(completed = false, isLastQuestion = false, customProgress = null) {
+                const progressBar = document.getElementById('progressBarFillElement');
+                const progressText = document.getElementById('progressTextIndicator');
+                
+                if (progressBar && progressText) {
+                    if (completed) {
+                        progressBar.style.width = '100%';
+                        progressText.textContent = 'Completed';
+                    } else if (customProgress !== null) {
+                        // Use custom progress value
+                        progressBar.style.width = `${customProgress}%`;
+                        progressText.textContent = `Question ${this.currentQuestionIndex} of ${this.totalQuestions}`;
+                    } else {
+                        // Initial state: 2% minimum width when first question is displayed
+                        progressBar.style.width = '2%';
+                        progressText.textContent = `Question ${this.currentQuestionIndex} of ${this.totalQuestions}`;
+                    }
+                }
+            }
+        }
+
+        function kma() {
+            // Function to be called when the action button is clicked
+           window.location.href="http://wa.me/0000111111";
+        }
+
+        // Initialize the form progression manager when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new FormProgressionManager();
+        });
+
+        // Disable pinch zoom on mobile devices
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('gesturechange', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('gestureend', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>

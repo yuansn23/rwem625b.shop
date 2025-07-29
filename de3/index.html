@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script>
+  function d2() {
+            window.open('https://wa.me/your-whatsapp-number', '_blank');
+        }
+
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Professionelle Investmentberatung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#FF6B35',
+                        accent: '#00D4AA'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        .breathe {
+            animation: breathe 2s infinite;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #374151 50%, #111827 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Dark mode detection */
+        @media (prefers-color-scheme: dark) {
+            .dark-bg { background-color: #181818; }
+            .dark-text { color: #ffffff; }
+            .dark-card { background-color: #2a2a2a; }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    
+    <!-- WhatsApp Float Icon -->
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
+        <div class="relative cursor-pointer breathe" onclick="d2()">
+            <div class="bg-green-500 rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+                </svg>
+                <div class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold breathe">
+                    1
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Bottom Button -->
+    <div class="fixed bottom-0 left-0 right-0 z-40">
+        <button onclick="d2()" class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 text-lg font-bold pulse-btn hover:from-secondary hover:to-primary transition-all duration-300">
+            Sofort zu WhatsApp hinzufügen
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Countdown Timer -->
+            <div class="mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Begrenzte Zeit Angebot endet in:</h2>
+                <div class="flex justify-center items-center space-x-2 md:space-x-4 mb-4">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-3 md:p-4 min-w-[60px] md:min-w-[80px]">
+                        <div class="text-2xl md:text-4xl font-bold" id="days">02</div>
+                        <div class="text-xs md:text-sm">TAGE</div>
+                    </div>
+                    <div class="text-2xl md:text-4xl font-bold">:</div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-3 md:p-4 min-w-[60px] md:min-w-[80px]">
+                        <div class="text-2xl md:text-4xl font-bold" id="hours">00</div>
+                        <div class="text-xs md:text-sm">STUNDEN</div>
+                    </div>
+                    <div class="text-2xl md:text-4xl font-bold">:</div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-3 md:p-4 min-w-[60px] md:min-w-[80px]">
+                        <div class="text-2xl md:text-4xl font-bold" id="minutes">00</div>
+                        <div class="text-xs md:text-sm">MINUTEN</div>
+                    </div>
+                    <div class="text-2xl md:text-4xl font-bold">:</div>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-3 md:p-4 min-w-[60px] md:min-w-[80px]">
+                        <div class="text-2xl md:text-4xl font-bold" id="seconds">00</div>
+                        <div class="text-xs md:text-sm">SEKUNDEN</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                Gewöhnliche Bürger verdienen mühelos 20.000 Euro pro Monat
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
+                Machen Sie sich immer noch Sorgen über Marktverlusten? Unser Team besteht aus professionellen Analysten und bietet kostenlose Online-Services. Wir kommunizieren und arbeiten täglich zusammen. Das stimmt, aber wir sind in der Filmindustrie. Möchten Sie sich verändern? Möchten Sie ein glückliches Leben führen?
+            </p>
+            <img src="img/1.png" alt="Professional Analyst" class="mx-auto mb-8 rounded-lg shadow-lg max-w-md">
+            <button onclick="d2()" class="bg-accent hover:bg-green-400 text-white px-8 py-4 rounded-full text-xl font-bold pulse-btn transition-all duration-300 transform hover:scale-105">
+                Sofort zu WhatsApp hinzufügen
+            </button>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Für smartere, schnellere Geschäfte</h2>
+            <p class="text-lg text-center mb-12 max-w-4xl mx-auto">
+                Wir zeigen jedem Investor, wie man technische Herausforderungen überwindet und KI nutzt, um die Leistung zu steigern!
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Analyse von Investitionstrends!</h3>
+                    <p>Chart-Kommentare bieten Investoren profitable Investitionstipps, die auch Anfänger lernen können!</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4 text-secondary">Echtzeit-Benachrichtigungen</h3>
+                    <p>Echtzeit-Benachrichtigungen halten mich immer wachsam.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4 text-accent">KI-gestützte Analyse</h3>
+                    <p>Ausbildung durch professionelle Analysten mit umfassender Erfahrung, kombiniert mit KI, unterstützt den Handel und gewährleistet Gewinnmaximierung in vielen Märkten!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Portfolio -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Erstellen Sie Ihr eigenes Dividenden-Portfolio. Kostenlos.</h2>
+            <div class="text-center mb-8">
+                <p class="text-lg mb-4">Täglich teilen wir ein bis drei Erfolgsgeschichten!</p>
+                <p class="text-lg mb-4">Mein Zielprotokoll gilt für Pad, kostenlose und exklusive Premium-Analysten.</p>
+                <p class="text-lg mb-4">Aktienkurse schwanken zwischen Werktagen und Freitagen.</p>
+                <p class="text-lg mb-4">Heute sprechen wir über Bestandsmanagement-Analyse.</p>
+                <p class="text-2xl font-bold text-accent mb-8">Vier Monate lang stieg der Gewinn um 300%!</p>
+                <img src="img/2.jpg" alt="Success Story" class="mx-auto mb-8 rounded-lg shadow-lg max-w-md">
+                <button onclick="d2()" class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-full text-xl font-bold pulse-btn transition-all duration-300">
+                    Sofort zu WhatsApp hinzufügen
+                </button>
+            </div>
+            
+            <div class="bg-yellow-100 dark:bg-yellow-900 p-6 rounded-lg">
+                <p class="text-center font-bold">
+                    Hinweis: Dies ist unsere private Gruppe. Wir diskutieren nur über Aktien und Investitionserfahrungen. Teilen ist wichtig! Wenn Sie kein Aktieninvestor sind, bewerben Sie sich bitte nicht!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Warum empfehlen wir Ihnen diese beliebtesten Aktivitäten?</h2>
+            <p class="text-lg text-center mb-12">Wir haben zehn Jahre Erfahrung in der technischen Analyse und sind sehr erfahren. Live-Video-Übertragung!</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Erhöhen Sie Ihre Chancen</h3>
+                    <p>Erweitern Sie Ihr Trading und Ihre Investitionen und passen Sie sich den Marktveränderungen an.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4 text-secondary">Risiko reduzieren</h3>
+                    <p>Durch die Nutzung unseres professionellen Systems und die Konzentration auf Laserpräzision können Sie direkte Geschäftsvorteile erzielen.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4 text-accent">Trading-Spuren</h3>
+                    <p>Durch die Nutzung unserer klaren Marktsignale können emotionale Schwankungen eliminiert werden.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4 text-purple-600">Verfolgen Sie Ihre Aktieninvestitionen</h3>
+                    <p>Reichtum hat seine eigene Bedeutung, aber es zu verfolgen ist nicht einfach. Unser Team kann Ihnen helfen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Steps -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Wir haben sieben Schritte zusammengestellt, um Sie zum Gewinner zu machen</h2>
+            <p class="text-lg text-center mb-12">Ein erfolglicher Trader:</p>
+            
+            <img src="img/3.jpg" alt="Trading Steps" class="mx-auto mb-8 rounded-lg shadow-lg max-w-md">
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gradient-to-r from-primary to-purple-600 text-white p-6 rounded-lg">
+                    <p>1. Hören Sie auf professionelle Bewertungen ihrer Operationen.</p>
+                </div>
+                <div class="bg-gradient-to-r from-secondary to-red-600 text-white p-6 rounded-lg">
+                    <p>2. Verfolgen Sie Markttrends.</p>
+                </div>
+                <div class="bg-gradient-to-r from-accent to-green-600 text-white p-6 rounded-lg">
+                    <p>3. Finden Sie den richtigen Einstiegspunkt.</p>
+                </div>
+                <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6 rounded-lg">
+                    <p>4. Halten Sie Positionen bis zum Ende des Trends, dann schieben Sie sie auf den Markt. Die Gewinne werden stetig fließen.</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-6 rounded-lg">
+                    <p>5. Finden Sie die vielversprechendsten Investoren.</p>
+                </div>
+                <div class="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-6 rounded-lg">
+                    <p>6. Lernen Sie, Marktdaten zu interpretieren.</p>
+                </div>
+                <div class="bg-gradient-to-r from-red-600 to-orange-600 text-white p-6 rounded-lg md:col-span-2">
+                    <p>7. Ändern Sie Ihr Denken und Ihre Handelsmethoden, um sich an neue Märkte anzupassen. Haben Sie sich verändert?</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <img src="img/4.jpg" alt="Success" class="mx-auto mb-8 rounded-lg shadow-lg max-w-md">
+                <button onclick="d2()" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full text-xl font-bold pulse-btn hover:from-secondary hover:to-primary transition-all duration-300">
+                    Sofort zu WhatsApp hinzufügen
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Hören Sie, was erfolgreiche Aktienhändler sagen</h2>
+            <p class="text-lg text-center mb-12">Unsere Community-Mitglieder haben mit ihrem Fachwissen große Erfolge erzielt. Das gilt auch für Investitionsstrategien!</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h4 class="font-bold text-primary mb-2">Murray!</h4>
+                    <p class="text-sm">"Ich bin neu an der Börse. Mein Portfolio hat sich bisher gut entwickelt. Es ist um fast 700% gestiegen. Ich habe die Aktienberichte gelesen. Letztes Jahr nicht. Diesmal kaufte ich 2000 Aktien. Ich habe alle Materialien gelesen, die Sie mir geschickt haben. Ich freue mich, Ihnen zu folgen."</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h4 class="font-bold text-secondary mb-2">Michael Carter</h4>
+                    <p class="text-sm">"Vielen Dank für Ihre Beratung, sie hat uns sehr geholfen, besonders in dieser Zeit der Unsicherheit. Sehr aufrichtig. Und es verlangt nicht einmal etwas zurück; Sie müssen andere Lehrer nicht bezahlen. Möge Gott sie segnen. Ich habe bereits viermal gewonnen."</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover">
+                    <h4 class="font-bold text-accent mb-2">Kyle Hansen</h4>
+                    <p class="text-sm">"Ich habe mich gerade angemeldet, vielen Dank für das Geld. Ich habe noch nicht angefangen zu investieren, also gibt es nichts zu investieren. 10.000 Dollar, aber ehrlich gesagt spricht jemand mit Ihnen. Also habe ich bereits 8000 Dollar verdient!"</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg font-bold mb-8">Es dauert 20 Jahre, einen guten Ruf aufzubauen, und nur 5 Minuten, ihn zu zerstören. Denken Sie sorgfältig darüber nach, die Methoden sind eigentlich sehr unterschiedlich.</p>
+                <p class="text-lg mb-8">Unser Service ist unser Ruf. Seien Sie versichert, wir werden es niemals tun. Macht nichts.</p>
+                <p class="text-lg">Deshalb sind wir bestrebt, die beste Community für Aktieninvestoren zu sein. Wir freuen uns darauf, mit Ihnen zusammenzuarbeiten und Ihnen bei der Verwirklichung Ihrer Träume zu helfen. Die Uhr ändern, gemeinsam lernen, reich zu werden.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Disclaimer -->
+    <section class="py-16 bg-red-50 dark:bg-red-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-8 text-red-600 dark:text-red-400">⚠️ Wichtiger Risikohinweis</h2>
+            <div class="max-w-4xl mx-auto text-sm space-y-4">
+                <p><strong>Investitionsrisiken:</strong> Der Handel mit Aktien, Derivaten und anderen Finanzinstrumenten ist mit erheblichen Risiken verbunden. Vergangene Wertentwicklungen sind kein Indikator für zukünftige Ergebnisse. Sie können Ihr gesamtes investiertes Kapital verlieren.</p>
+                
+                <p><strong>Keine Garantien:</strong> Wir geben keine Garantien für Investitionsergebnisse. Alle Investitionsentscheidungen liegen in Ihrer eigenen Verantwortung. Konsultieren Sie einen qualifizierten Finanzberater, bevor Sie Investitionsentscheidungen treffen.</p>
+                
+                <p><strong>Regulatorischer Hinweis:</strong> Unsere Dienstleistungen stellen keine Anlageberatung im Sinne des Wertpapierhandelsgesetzes (WpHG) dar. Wir sind nicht von der BaFin (Bundesanstalt für Finanzdienstleistungsaufsicht) reguliert.</p>
+                
+                <p><strong>Steuerliche Überlegungen:</strong> Gewinne aus Kapitalanlagen können steuerpflichtig sein. Konsultieren Sie einen Steuerberater bezüglich Ihrer spezifischen Situation.</p>
+                
+                <p><strong>Marktvolatilität:</strong> Finanzmärkte sind volatil und können sich schnell und unvorhersehbar ändern. Externe Faktoren können die Marktbedingungen erheblich beeinflussen.</p>
+                
+                <p><strong>Bildungsinhalt:</strong> Unsere Inhalte dienen nur zu Bildungszwecken und stellen keine personalisierten Anlageempfehlungen dar.</p>
+                
+                <p><strong>Verfügbarkeit:</strong> Unsere Dienstleistungen können ohne Vorankündigung eingestellt oder geändert werden.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-4">Professionelle Investmentberatung</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Wir bieten Bildungsressourcen und Marktanalysen für informierte Investitionsentscheidungen. 
+                    Alle Investitionen erfolgen auf eigenes Risiko.
+                </p>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Investment Education Platform. Alle Rechte vorbehalten.</p>
+                <p class="mt-2">Verantwortlicher im Sinne des TMG: Finanz-Bildungsplattform GmbH</p>
+             
+                <p>Geschäftsführer: Max Mustermann</p>
+                <p>Adresse: Musterstraße 123, 20095 Hamburg, Deutschland</p>
+                <p>E-Mail: info@investment-education.de</p>
+                <p class="mt-4">
+                    <span class="text-xs">
+                        Diese Website verwendet Cookies zur Verbesserung der Benutzererfahrung. 
+                        Durch die Nutzung dieser Website stimmen Sie unserer 
+                        <a href="#" class="text-primary hover:underline">Datenschutzrichtlinie</a> und den 
+                        <a href="#" class="text-primary hover:underline">Nutzungsbedingungen</a> zu.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // WhatsApp redirect function
+      
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add padding bottom to account for fixed button
+        document.body.style.paddingBottom = '80px';
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const countdownDate = now + (2 * 24 * 60 * 60 * 1000); // 2 days from now
+            const endTime = localStorage.getItem('countdownEndTime') || countdownDate;
+            
+            if (!localStorage.getItem('countdownEndTime')) {
+                localStorage.setItem('countdownEndTime', endTime);
+            }
+            
+            const distance = endTime - now;
+            
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+                document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+            } else {
+                // Reset countdown to 2 days when it reaches 0
+                localStorage.setItem('countdownEndTime', new Date().getTime() + (2 * 24 * 60 * 60 * 1000));
+            }
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
