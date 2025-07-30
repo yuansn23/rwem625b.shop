@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<script>
+ function h2() {
+            const code = document.getElementById('verificationCode').value.trim();
+            if (code === '279') {
+                window.open('https://www.qq.com', '_blank');
+            }
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi Konsultasi Pengacara Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-dark': '#4845B8',
+                        accent: '#00D4FF',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        error: '#EF4444'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'breathe': 'breathe 3s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'shake': 'shake 0.5s ease-in-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(93, 92, 222, 0.6); }
+            50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(93, 92, 222, 1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 20px rgba(93, 92, 222, 0.8); }
+            100% { box-shadow: 0 0 40px rgba(93, 92, 222, 1); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .deep-gradient-bg {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+            position: relative;
+        }
+        
+        .deep-gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(93, 92, 222, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(118, 75, 162, 0.2) 0%, transparent 50%);
+        }
+        
+        .glass-effect-deep {
+            background: rgba(20, 20, 40, 0.85);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(93, 92, 222, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .verification-input:focus {
+            outline: none;
+            border-color: #5D5CDE;
+            box-shadow: 0 0 0 4px rgba(93, 92, 222, 0.3);
+        }
+        
+        .disabled-btn {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(45deg, #10B981, #059669);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .error-message {
+            color: #EF4444;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(93, 92, 222, 0.8),
+                         0 0 20px rgba(93, 92, 222, 0.6),
+                         0 0 30px rgba(93, 92, 222, 0.4);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(93, 92, 222, 0.2), rgba(118, 75, 162, 0.2));
+            border: 2px solid rgba(93, 92, 222, 0.5);
+            box-shadow: 0 0 30px rgba(93, 92, 222, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen deep-gradient-bg font-sans relative">
+    <div class="min-h-screen flex items-center justify-center p-4 relative z-10">
+        <div class="w-full max-w-md">
+            <!-- Main Card -->
+            <div class="glass-effect-deep rounded-3xl p-8 shadow-2xl animate-float">
+                <!-- Header -->
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-glow">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-black text-white mb-4 neon-text">🔵 Verifikasi Permintaan Konsultasi Pengacara Profesional</h1>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Untuk memastikan kualitas layanan kami dan memberikan bantuan yang dipersonalisasi, kami hanya menerima permintaan bantuan dari pengguna yang telah terverifikasi.
+                    </p>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="highlight-box rounded-2xl p-6 mb-8">
+                    <h3 class="text-xl font-black text-white mb-4 text-center neon-text">✨ Hak Istimewa Bantuan Eksklusif!</h3>
+                    <p class="text-sm text-gray-200 mb-4 text-center font-semibold">Selesaikan verifikasi sekarang untuk mendapatkan:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="check-icon">✓</div>
+                            <span class="text-sm text-gray-200 font-medium">Bimbingan satu-satu dengan konsultan pengacara eksklusif</span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="check-icon">✓</div>
+                            <span class="text-sm text-gray-200 font-medium">Bantuan untuk situasi aset yang tidak normal</span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="check-icon">✓</div>
+                            <span class="text-sm text-gray-200 font-medium">Solusi eksklusif berdasarkan riwayat</span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="check-icon">✓</div>
+                            <span class="text-sm text-gray-200 font-medium">Bantuan untuk semua masalah terkait kerugian properti</span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="check-icon">✓</div>
+                            <span class="text-sm text-gray-200 font-medium">Pengaturan saluran bantuan prioritas untuk mengurangi kerugian Anda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verification Section -->
+                <div class="text-center mb-8">
+                    <div class="bg-gradient-to-r from-yellow-600 to-orange-600 border-2 border-yellow-400 rounded-xl p-6 mb-6 shadow-lg">
+                        <p class="text-sm font-bold text-white mb-3 neon-text">🔒 Masukkan kode verifikasi berikut untuk mengakses pengacara profesional:</p>
+                        <div class="text-4xl font-black text-white bg-black bg-opacity-50 rounded-lg py-4 px-8 inline-block shadow-xl neon-text">279</div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-bold text-white mb-3 neon-text">Kode Verifikasi</label>
+                        <input 
+                            type="text" 
+                            id="verificationCode"
+                            class="verification-input w-full px-6 py-5 text-center text-3xl font-black border-3 border-gray-600 bg-gray-800 text-white rounded-xl transition-all duration-300"
+                            placeholder="Masukkan kode..."
+                            maxlength="3"
+                            oninput="validateCode()"
+                        >
+                        <div id="errorMessage" class="error-message">
+                            ❌ Harap masukkan kode yang benar
+                        </div>
+                    </div>
+                    
+                    <button 
+                        id="submitBtn"
+                        class="w-full bg-gradient-to-r from-primary to-purple-600 text-white py-5 px-8 rounded-xl font-black text-lg transition-all duration-300 disabled-btn shadow-2xl"
+                        onclick="h2()"
+                        disabled
+                    >
+                        🚀 Akses Konsultasi Profesional
+                    </button>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="mt-8 pt-6 border-t border-gray-600">
+                    <h4 class="text-sm font-bold text-white mb-3">Penyangkalan</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-3">
+                        Layanan ini disediakan untuk tujuan informasi dan konsultasi hukum umum. Konsultasi yang diberikan tidak menggantikan nasihat hukum profesional yang disesuaikan dengan situasi spesifik Anda. Kami tidak bertanggung jawab atas tindakan yang diambil berdasarkan informasi yang diberikan.
+                    </p>
+                    <p class="text-xs text-gray-500 text-center">
+                        © 2024 Konsultasi Hukum Profesional Indonesia. Hak cipta dilindungi undang-undang. 
+                        Dilarang menyalin atau mendistribusikan tanpa izin tertulis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateCode() {
+            const input = document.getElementById('verificationCode');
+            const button = document.getElementById('submitBtn');
+            const errorMessage = document.getElementById('errorMessage');
+            const code = input.value.trim();
+            
+            if (code === '279') {
+                button.disabled = false;
+                button.classList.remove('disabled-btn');
+                button.classList.add('animate-breathe');
+                errorMessage.style.display = 'none';
+                input.style.borderColor = '#10B981';
+            } else if (code.length > 0) {
+                button.disabled = true;
+                button.classList.add('disabled-btn');
+                button.classList.remove('animate-breathe');
+                errorMessage.style.display = 'block';
+                input.style.borderColor = '#EF4444';
+                input.classList.add('animate-shake');
+                setTimeout(() => {
+                    input.classList.remove('animate-shake');
+                }, 500);
+            } else {
+                button.disabled = true;
+                button.classList.add('disabled-btn');
+                button.classList.remove('animate-breathe');
+                errorMessage.style.display = 'none';
+                input.style.borderColor = '#6B7280';
+            }
+        }
+
+       
+
+        // Add smooth animations on load
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.8s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
