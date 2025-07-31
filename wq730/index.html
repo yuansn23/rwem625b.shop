@@ -10,11 +10,30 @@
 
   gtag('config', 'AW-17393985034');
 </script>
+
+ <!-- Event snippet for 注册 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17393985034/1zczCJXk3vwaEIrMjOZA',
+      'value': 1.0,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 <script>
  function h2() {
             const code = document.getElementById('verificationCode').value.trim();
             if (code === '279') {
-                window.open('https://wa.me/+6281376726787', '_blank');
+             gtag_report_conversion('https://wa.me/+6281376726787'); 
             }
         }
 </script>
