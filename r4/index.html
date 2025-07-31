@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本SBI証券株式交流コミュニティへようこそ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sbi-navy': '#0f1a2e',
+                        'sbi-blue': '#1e40af',
+                        'sbi-orange': '#ea580c',
+                        'sbi-gold': '#f59e0b',
+                        'sbi-light': '#f0f9ff'
+                    },
+                    fontFamily: {
+                        'japanese': ['Noto Sans JP', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(120deg, #0f1a2e 0%, #1e40af 50%, #3b82f6 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #ea580c, transparent);
+            height: 3px;
+        }
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 25px rgba(234, 88, 12, 0.6); }
+            50% { box-shadow: 0 0 35px rgba(234, 88, 12, 0.9); }
+        }
+        .breathe {
+            animation: breathe 3s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(234, 88, 12, 0.5);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(234, 88, 12, 0.8);
+            }
+        }
+        .blink {
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.4; }
+        }
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            animation: breathe 3s ease-in-out infinite;
+        }
+        @media (max-width: 768px) {
+            .floating-btn {
+                bottom: 20px;
+            }
+        }
+        .line-icon {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .bounce-number {
+            animation: bounce-number 1s infinite;
+        }
+        @keyframes bounce-number {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        @media (max-width: 768px) {
+            .line-icon {
+                right: 15px;
+                top: 60%;
+            }
+        }
+    </style>
+</head>
+<body class="font-japanese bg-sbi-light dark:bg-gray-900">
+    <!-- Dark mode setup -->
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        function k4() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        // Countdown timer
+        function startCountdown() {
+            const countDownDate = new Date().getTime() + 8 * 60 * 60 * 1000; // 8 hours from now
+            
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+                
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                const element = document.getElementById("countdown");
+                if (element) {
+                    element.innerHTML = hours + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+                }
+                
+                if (distance < 0) {
+                    if (element) element.innerHTML = "終了";
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            startCountdown();
+        };
+    </script>
+
+   
+
+    <!-- LINE Icon with Badge -->
+    <div onclick="k4()" class="line-icon">
+        <div class="relative">
+            <div class="w-16 h-16 rounded-full shadow-2xl cursor-pointer transition-all duration-300 hover:scale-110 overflow-hidden">
+                <img src="https://play-lh.googleusercontent.com/74iMObG1vsR3Kfm82RjERFhf99QFMNIY211oMvN636_gULghbRBMjpVFTjOK36oxCbs=w240-h480-rw" alt="LINE" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -top-2 -right-2 bg-red-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bounce-number">
+                1
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
+                        <span class="text-sbi-gold mr-2">🏆</span>
+                        <span class="text-white font-semibold">オリコン顧客満足度第1位 | 800万口座突破</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-black text-white mb-8 leading-tight slide-up">
+                        <span class="block text-sbi-orange">日本SBI証券</span>
+                        <span class="block">エリート投資家</span>
+                        <span class="block text-3xl md:text-4xl font-medium mt-4">限定コミュニティ</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+                        株式市場での成功の鍵は、<span class="text-sbi-orange font-bold">独占的な情報と実証済み戦略</span>の獲得にあります
+                    </p>
+
+                    <!-- Authority & Social Proof -->
+                    <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
+                            <div class="text-2xl font-bold text-sbi-orange">1,000名</div>
+                            <div class="text-sm">限定エリート会員</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
+                            <div class="text-2xl font-bold text-sbi-orange">98.7%</div>
+                            <div class="text-sm">プロ認定率</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white">
+                            <div class="text-2xl font-bold text-sbi-orange">25年</div>
+                            <div class="text-sm">業界トップ実績</div>
+                        </div>
+                    </div>
+
+                    <button onclick="k4()" class="breathe bg-sbi-orange hover:bg-orange-600 text-white px-16 py-6 rounded-full text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl mb-6">
+                        🎯 今すぐエリート会員に申請
+                    </button>
+                    
+                    <p class="text-white/80 text-lg">
+                        ✅ 厳格な審査制 ✅ 限定数万円相当特典 ✅ 30日間保証
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <img src="img/1.jpg" 
+                         alt="SBI証券エリート投資家" 
+                         class="w-full max-w-2xl mx-auto rounded-3xl shadow-2xl animate-float border-4 border-white/20">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scarcity & Authority Section -->
+    <section class="py-20 bg-orange-50 dark:bg-orange-900/10 border-t-4 border-sbi-orange">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl font-bold text-sbi-navy dark:text-white mb-6">
+                    ⚡ 限定エリート投資家コミュニティ
+                </h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+                    厳選された投資のプロフェッショナルのみが参加できる特別なコミュニティです
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-10">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                        <div class="text-sbi-orange text-4xl mb-4">🔒</div>
+                        <h3 class="text-xl font-bold text-sbi-navy dark:text-white mb-4">厳格な参加基準</h3>
+                        <ul class="text-gray-600 dark:text-gray-400 text-left space-y-2">
+                            <li>• 投資経験年数の証明</li>
+                            <li>• 資産運用実績の審査</li>
+                            <li>• 専門知識レベルの確認</li>
+                            <li>• 限定1,000名まで</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+                        <div class="text-sbi-orange text-4xl mb-4">👑</div>
+                        <h3 class="text-xl font-bold text-sbi-navy dark:text-white mb-4">エリート特典</h3>
+                        <ul class="text-gray-600 dark:text-gray-400 text-left space-y-2">
+                            <li>• 機関投資家級の情報提供</li>
+                            <li>• 限定投資セミナー参加権</li>
+                            <li>• 個別コンサルティング</li>
+                            <li>• 優先サポート対応</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-sbi-navy to-sbi-blue text-white rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-4">🎁 今週限定特別オファー</h3>
+                    <p class="text-lg mb-4">通常の審査プロセスをスキップして即座に参加可能</p>
+                    <div class="text-yellow-300 font-semibold">参加費用: 通常数万円 → 今週のみ完全無料</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-sbi-navy dark:text-white mb-6">
+                        日本SBI証券について
+                    </h2>
+                    <div class="section-divider w-32 mx-auto mb-8"></div>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">業界をリードする革新的な投資プラットフォーム</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-sbi-blue p-6 rounded-lg">
+                            <div class="text-sbi-blue font-bold text-lg mb-2">🏆 圧倒的な業界実績</div>
+                            <div class="text-gray-600 dark:text-gray-400">オンライン証券のパイオニアとして業界を牽引</div>
+                        </div>
+                        
+                        <div class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                            <p>
+                                日本SBI証券（SBI Securities）は<span class="font-bold text-sbi-navy">1999年創立</span>以来、個人投資家向けに革新的な低コスト・高効率投資プラットフォームを提供し続けています。
+                            </p>
+                            <p>
+                                現在では<span class="font-bold text-sbi-orange">800万を超える口座数</span>を誇り、日本最大級のオンライン証券会社として確固たる地位を築いています。
+                            </p>
+                        </div>
+                        
+                        <!-- Awards with better styling -->
+                        <div class="bg-gradient-to-br from-sbi-orange to-orange-500 text-white rounded-2xl p-6 shadow-lg">
+                            <div class="font-bold text-xl mb-4 flex items-center">
+                                <span class="mr-2">🏅</span>権威ある受賞歴
+                            </div>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-start">
+                                    <span class="text-yellow-200 mr-2 mt-1">★</span>
+                                    <span>オリコン顧客満足度®ランキング：ネット証券部門第1位（最新年度）</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-yellow-200 mr-2 mt-1">★</span>
+                                    <span>オリコン顧客満足度®ランキング：iDeCo証券会社部門第1位（最新年度）</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="k4()" class="breathe bg-sbi-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+                            詳細を見る
+                        </button>
+                    </div>
+                    
+                    <div class="text-center">
+                        <img src="img/2.jpg" 
+                             alt="SBI証券本社" 
+                             class="w-full rounded-3xl shadow-2xl mb-8">
+                        
+                        <!-- Enhanced Statistics -->
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center bg-gradient-to-br from-sbi-navy to-sbi-blue text-white rounded-xl p-6">
+                                <div class="text-3xl font-bold text-sbi-orange">800万+</div>
+                                <div class="text-sm">口座開設数</div>
+                                <div class="text-xs mt-1 opacity-80">業界最大級</div>
+                            </div>
+                            <div class="text-center bg-gradient-to-br from-sbi-blue to-blue-600 text-white rounded-xl p-6">
+                                <div class="text-3xl font-bold text-sbi-orange">99.9%</div>
+                                <div class="text-sm">システム稼働率</div>
+                                <div class="text-xs mt-1 opacity-80">業界最高水準</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-20 bg-sbi-light dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-sbi-navy dark:text-white mb-6">
+                        🎯 エリート会員の実績
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">限定コミュニティメンバーの驚異的な成果</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border-t-4 border-sbi-orange">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-sbi-navy rounded-full flex items-center justify-center text-white font-bold">A氏</div>
+                            <div class="ml-3">
+                                <div class="font-semibold text-sbi-navy dark:text-white">A氏（50代・元証券マン）</div>
+                                <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 italic mb-4">
+                            "エリート情報で<span class="font-bold text-green-600">年利45%</span>を達成。25年の経験でも驚きの結果です。"
+                        </p>
+                        <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                            <div class="text-green-600 font-bold">💰 年間実績：+数百万円</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border-t-4 border-sbi-orange">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-sbi-navy rounded-full flex items-center justify-center text-white font-bold">B氏</div>
+                            <div class="ml-3">
+                                <div class="font-semibold text-sbi-navy dark:text-white">B氏（40代・投資顧問）</div>
+                                <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 italic mb-4">
+                            "限定戦略で<span class="font-bold text-green-600">勝率92%</span>。プロも認める情報の質です。"
+                        </p>
+                        <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                            <div class="text-green-600 font-bold">💰 年間実績：+数千万円</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border-t-4 border-sbi-orange">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-sbi-navy rounded-full flex items-center justify-center text-white font-bold">C氏</div>
+                            <div class="ml-3">
+                                <div class="font-semibold text-sbi-navy dark:text-white">C氏（60代・資産家）</div>
+                                <div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 italic mb-4">
+                            "安定運用で<span class="font-bold text-green-600">年率30%</span>。老後資産が大幅増加しました。"
+                        </p>
+                        <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+                            <div class="text-green-600 font-bold">💰 年間実績：+数億円</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button onclick="k4()" class="breathe bg-sbi-orange hover:bg-orange-600 text-white px-12 py-4 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                        🚀 今すぐエリート会員に参加
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-sbi-navy dark:text-white mb-6">
+                        💡 瞬息万変の株式市場で
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">一般投資家が抱える深刻な課題</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-xl">
+                        <div class="text-red-500 text-5xl mb-4">📊</div>
+                        <h3 class="text-xl font-bold text-sbi-navy dark:text-white mb-4">情報不足</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            市場データや専門分析の取得困難により、<span class="font-semibold text-red-500">重要な投資判断を誤る</span>リスクが高まります。
+                        </p>
+                        <div class="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
+                            <div class="text-red-600 text-sm font-semibold">❌ 損失リスク増大</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-xl">
+                        <div class="text-orange-500 text-5xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold text-sbi-navy dark:text-white mb-4">戦略欠如</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            <span class="font-semibold text-orange-500">体系的な投資戦略</span>の不在により、市場の絶好機を見逃し続けてしまいます。
+                        </p>
+                        <div class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
+                            <div class="text-orange-600 text-sm font-semibold">❌ 機会損失の積み重ね</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-xl">
+                        <div class="text-purple-500 text-5xl mb-4">👤</div>
+                        <h3 class="text-xl font-bold text-sbi-navy dark:text-white mb-4">孤立無援</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            <span class="font-semibold text-purple-500">プロレベルのネットワーク</span>がなく、高度な投資知識の習得機会を失っています。
+                        </p>
+                        <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+                            <div class="text-purple-600 text-sm font-semibold">❌ 成長機会の損失</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-gradient-to-r from-sbi-orange to-orange-600 text-white rounded-2xl p-8 max-w-3xl mx-auto">
+                        <h3 class="text-2xl font-bold mb-4">💡 全ての課題を一挙解決！</h3>
+                        <p class="text-lg">SBI証券エリート投資家コミュニティが提供する包括的ソリューション</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-sbi-navy dark:text-white mb-6">
+                        🚀 私たちの革新的ソリューション
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">エリート投資家だけがアクセスできる特別なサポート体系</p>
+                </div>
+
+                <div class="space-y-16">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl shadow-xl">
+                            <div class="text-sbi-orange text-5xl mb-6">🏛️</div>
+                            <h3 class="text-2xl font-bold text-sbi-navy dark:text-white mb-4">権威あるバックアップ</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                SBI証券25年の専門知識と<span class="font-semibold text-blue-600">機関投資家レベルの情報</span>を独占提供
+                            </p>
+                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg">
+                                <div class="text-blue-600 font-bold">✨ 情報精度: 98.7%</div>
+                                <div class="text-sm text-gray-500 mt-1">機関投資家同等レベル</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-8 rounded-2xl shadow-xl">
+                            <div class="text-sbi-orange text-5xl mb-6">💬</div>
+                            <h3 class="text-2xl font-bold text-sbi-navy dark:text-white mb-4">エリート同士の交流</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                限定1,000名の<span class="font-semibold text-green-600">認定投資家同士</span>による高度な情報交換と戦略共有
+                            </p>
+                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg">
+                                <div class="text-green-600 font-bold">✨ 平均資産: 数億円</div>
+                                <div class="text-sm text-gray-500 mt-1">プロフェッショナル限定</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-8 rounded-2xl shadow-xl">
+                            <div class="text-sbi-orange text-5xl mb-6">⚡</div>
+                            <h3 class="text-2xl font-bold text-sbi-navy dark:text-white mb-4">リアルタイム最新情報</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                <span class="font-semibold text-purple-600">秒単位の市場変動</span>と独占的な投資機会を瞬時に配信
+                            </p>
+                            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg">
+                                <div class="text-purple-600 font-bold">✨ 配信速度: 0.1秒</div>
+                                <div class="text-sm text-gray-500 mt-1">業界最速レベル</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <img src="img/3.jpg" 
+                             alt="エリートソリューション" 
+                             class="w-full max-w-3xl mx-auto rounded-3xl shadow-2xl mb-10">
+                        
+                        <!-- Exclusive Offer -->
+                        <div class="bg-gradient-to-r from-sbi-navy via-sbi-blue to-blue-600 text-white rounded-3xl p-10 max-w-4xl mx-auto mb-10">
+                            <div class="text-4xl font-bold mb-6">🎉 エリート限定特別オファー</div>
+                            <div class="text-2xl mb-6">全方位投資サポートシステム</div>
+                            <div class="text-xl mb-6">通常価格 数十万円/年 → <span class="text-sbi-orange font-bold">今週のみ完全無料</span></div>
+                            <div class="text-lg">+ 限定特典: 数万円相当の個別コンサルティング付き</div>
+                        </div>
+                        
+                        <button onclick="k4()" class="breathe bg-gradient-to-r from-sbi-orange to-orange-500 hover:from-orange-600 hover:to-orange-700 text-white px-16 py-6 rounded-full text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                            🎁 今すぐ無料で参加して成功を掴む
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Webinar Section -->
+    <section class="py-20 bg-sbi-light dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-sbi-navy dark:text-white mb-6">
+                        🎓 エリート限定オンライン研讨会
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">業界トップクラスの専門家による特別セッション</p>
+                    
+                    <!-- Exclusive Access Alert -->
+                    <div class="mt-8 bg-gradient-to-r from-sbi-orange to-orange-500 text-white rounded-2xl p-6 max-w-3xl mx-auto">
+                        <div class="text-2xl font-bold mb-2">
+                            📅 次回エリート研讨会: 近日開催予定
+                        </div>
+                        <div class="text-lg">
+                            限定参加者のみ：機関投資家レベルの極秘戦略を完全公開
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border-t-4 border-sbi-orange">
+                        <div class="text-sbi-orange text-5xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold text-sbi-navy dark:text-white mb-4">機関レベル市場分析</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            ヘッジファンド級の高度な分析手法と市場予測を学習
+                        </p>
+                        <div class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
+                            <div class="text-sbi-orange font-bold text-sm">🎯 的中率: 94.3%</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border-t-4 border-sbi-orange">
+                        <div class="text-sbi-orange text-5xl mb-4">🏆</div>
+                        <h3 class="text-xl font-bold text-sbi-navy dark:text-white mb-4">成功投資家の実戦略</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            年利50%超を達成したエリート投資家の具体的手法を公開
+                        </p>
+                        <div class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
+                            <div class="text-sbi-orange font-bold text-sm">🎯 平均年利: 52.7%</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border-t-4 border-sbi-orange">
+                        <div class="text-sbi-orange text-5xl mb-4">❓</div>
+                        <h3 class="text-xl font-bold text-sbi-navy dark:text-white mb-4">専門家直接指導</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            業界トップアナリストによる個別質疑応答セッション
+                        </p>
+                        <div class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg">
+                            <div class="text-sbi-orange font-bold text-sm">🎯 満足度: 99.2%</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 hero-bg">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <img src="img/4.jpg" 
+                     alt="成功への道筋" 
+                     class="w-full max-w-3xl mx-auto rounded-3xl shadow-2xl mb-12 border-4 border-white/20">
+                
+                <h2 class="text-5xl md:text-7xl font-bold text-white mb-10">
+                    💎 エリート投資家への招待状
+                </h2>
+                
+                <p class="text-2xl text-white/90 mb-10 leading-relaxed">
+                    限定1,000名だけが手にできる、投資成功への究極のパスポート
+                </p>
+
+                <!-- Ultimate Offer Box -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-10 mb-12">
+                    <div class="text-4xl font-bold text-sbi-orange mb-6">🎁 エリート専用特典パッケージ</div>
+                    <div class="grid md:grid-cols-3 gap-6 text-white mb-8">
+                        <div class="bg-white/10 rounded-xl p-6">
+                            <div class="font-bold text-lg">機関投資家級情報</div>
+                            <div class="text-sm opacity-80">価値: 数十万円</div>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-6">
+                            <div class="font-bold text-lg">個別コンサルティング</div>
+                            <div class="text-sm opacity-80">価値: 数万円</div>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-6">
+                            <div class="font-bold text-lg">限定ネットワーク参加権</div>
+                            <div class="text-sm opacity-80">価値: プライスレス</div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-bold text-white">
+                        総額 数百万円相当 → <span class="text-sbi-orange">審査通過者のみ完全無料</span>
+                    </div>
+                </div>
+                
+               
+                
+                <div class="grid md:grid-cols-3 gap-6 text-white/90 text-lg">
+                    <div class="flex items-center justify-center">
+                        <span class="text-green-400 mr-2">✅</span>
+                        厳格審査制
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-green-400 mr-2">✅</span>
+                        限定1,000名
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <span class="text-green-400 mr-2">✅</span>
+                        満足度保証
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sbi-navy text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-bold mb-4 text-sbi-orange">SBI証券エリート投資家コミュニティ</h3>
+                        <p class="text-gray-400 mb-6">限定1,000名のプロフェッショナル投資家ネットワーク</p>
+                        <div class="flex space-x-4">
+                            <div class="bg-sbi-blue p-3 rounded-lg">
+                                <span class="text-2xl">📈</span>
+                            </div>
+                            <div class="bg-sbi-orange p-3 rounded-lg">
+                                <span class="text-2xl">💎</span>
+                            </div>
+                            <div class="bg-green-500 p-3 rounded-lg">
+                                <span class="text-2xl">🏆</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-sbi-orange">エリートサービス</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>機関投資家級情報</li>
+                            <li>高度市場分析</li>
+                            <li>限定研讨会</li>
+                            <li>プロネットワーク</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-sbi-orange">圧倒的実績</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>限定会員: 1,000名</li>
+                            <li>平均年利: 45%+</li>
+                            <li>勝率: 92%</li>
+                            <li>満足度: 98.7%</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8 text-center">
+                    <button onclick="k4()" class="breathe bg-sbi-orange hover:bg-orange-600 text-white px-12 py-4 rounded-full font-bold transition-all duration-300 mb-6">
+                        最後のチャンス - エリート審査に申請
+                    </button>
+                    <p class="text-gray-400 text-sm">
+                        © 2025 SBI証券エリート投資家コミュニティ. All rights reserved. | 投資にはリスクが伴います。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
