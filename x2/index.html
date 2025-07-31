@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrabajoFlexible.es - Trabajo Remoto y Tiempo Parcial en Casa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#FF6B6B',
+                        accent: '#4ECDC4'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(17, 24, 39, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(93, 92, 222, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(93, 92, 222, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(93, 92, 222, 0); }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-primary">
+                    <i class="fas fa-laptop-house mr-2"></i>
+                    TrabajoFlexible.es
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-primary transition-colors duration-300">Sobre Nosotros</a>
+                    <a href="#advantages" class="hover:text-primary transition-colors duration-300">Cómo Empezar</a>
+                    <a href="#faq" class="hover:text-primary transition-colors duration-300">Preguntas Frecuentes</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#about" class="block py-2 hover:text-primary transition-colors">Sobre Nosotros</a>
+                <a href="#advantages" class="block py-2 hover:text-primary transition-colors">Cómo Empezar</a>
+                <a href="#faq" class="block py-2 hover:text-primary transition-colors">Preguntas Frecuentes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-white rounded-full floating"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full floating" style="animation-delay: -1s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Trabajo Remoto, Tiempo Parcial en Casa
+                    <span class="block text-yellow-300">Horarios Flexibles</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Nuestra misión es ayudar a los comerciantes a lograr un crecimiento en las ventas y optimizar su rendimiento en el mercado online
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button onclick="d2()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 btn-pulse">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Aplicar Ahora Mismo
+                    </button>
+                    <a href="#about" class="border-2 border-white hover:bg-white hover:text-gray-900 py-4 px-8 rounded-full text-lg transition-all duration-300">
+                        Conoce Más
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-primary">Sobre Nosotros</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="img/1.jpg" alt="Equipo profesional" class="rounded-2xl shadow-2xl w-full floating">
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed">
+                        Somos un equipo oficial certificado de promoción de productos, dedicado a trabajar estrechamente con comerciantes de eBay, mejorando la exposición de productos y las ventas a través de estrategias de marketing innovadoras.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Nuestro equipo está compuesto por expertos en marketing con experiencia y analistas de datos, con profunda perspicacia del mercado y rica experiencia práctica.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="text-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                            <i class="fas fa-users text-3xl text-primary mb-2"></i>
+                            <h4 class="font-bold">Equipo Experto</h4>
+                        </div>
+                        <div class="text-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                            <i class="fas fa-certificate text-3xl text-primary mb-2"></i>
+                            <h4 class="font-bold">Certificado Oficial</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-primary">Nuestras Ventajas</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-shield-alt text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Trabajo Legal</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Expertos verifican cada oferta de trabajo, asegurando que no haya fraudes o spam, solo posiciones remotas de alta calidad.</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-briefcase text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Múltiples Oportunidades</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Ofrecemos una amplia variedad de posiciones para diferentes perfiles y habilidades.</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-green-50 to-teal-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-user-check text-4xl text-teal-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Empleadores Verificados</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Sin riesgos, sin fraudes. Todos nuestros empleadores están completamente verificados.</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-chart-line text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Ingresos Transparentes</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Claros y transparentes, confianza y beneficio mutuo.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <img src="img/2.jpg" alt="Ventajas del trabajo" class="mx-auto rounded-2xl shadow-2xl mb-8 max-w-md floating">
+                <button onclick="d2()" class="bg-primary hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 btn-pulse">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Aplicar Ahora Mismo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Content Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-primary">Contenido del Trabajo</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Realizar operaciones de "me gusta + favoritos" en productos específicos en la plataforma de tareas, cooperando con vendedores para mejorar el ranking.
+                </p>
+            </div>
+
+            <!-- Job Advantages -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <i class="fas fa-graduation-cap text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Sin Experiencia Necesaria</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Ya seas principiante o con experiencia, nuestro flujo de trabajo es simple y fácil de entender. Solo necesitas una breve capacitación para comenzar tu viaje de promoción.</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <i class="fas fa-clock text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Horarios Flexibles</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Entendemos que cada persona tiene horarios diferentes. Puedes elegir libremente tu horario de trabajo según tu agenda. Solo necesitas invertir aproximadamente 1.5 horas al día.</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <i class="fas fa-chart-bar text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Más Trabajo, Más Ganancia</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Ofrecemos un modelo de compensación basado en rendimiento. Tu tiempo y esfuerzo se reflejarán directamente en tus ingresos.</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <i class="fas fa-money-bill-wave text-4xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Pago Puntual</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Prometemos liquidación rápida, asegurando que tus ingresos mensuales lleguen a tiempo. Puedes verificar tu progreso e ingresos en cualquier momento.</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <i class="fas fa-gift text-4xl text-red-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Bonificación por Registro</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Para dar la bienvenida a nuevos miembros, hemos establecido bonificaciones correspondientes. Después del registro, recibirás inmediatamente una recompensa.</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center">
+                    <img src="img/3.jpg" alt="Únete ahora" class="w-32 h-32 object-cover rounded-full mb-4">
+                    <button onclick="d2()" class="bg-primary hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Aplicar Ahora Mismo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-primary">Condiciones de Registro</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-xl">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="text-center">
+                        <i class="fas fa-birthday-cake text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Mayor de 25 años</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Edad mínima requerida</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <i class="fas fa-credit-card text-4xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Tarjeta Bancaria</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Poseer tarjeta bancaria a nombre propio</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <i class="fas fa-euro-sign text-4xl text-purple-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">168€ de Capital</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Devuelto completamente, 0 riesgo</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl mb-6">
+                    <h4 class="text-lg font-bold mb-3 text-yellow-600">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Cumplimiento Legal
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Cumplimos con la ley fiscal española (artículos 29 y 93 de la Ley General Tributaria) y aseguramos la trazabilidad de los pagos: no se aceptan cuentas de terceros (como Bizum o PayPal).
+                    </p>
+                </div>
+
+                <div class="bg-blue-100 dark:bg-blue-900 p-6 rounded-xl">
+                    <h4 class="text-lg font-bold mb-3 text-blue-700 dark:text-blue-300">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Sobre el Capital Inicial
+                    </h4>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        El capital inicial solo se usa para verificar la autenticidad de la cuenta, prevenir registros maliciosos y garantizar el equilibrio del pool de tareas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-primary">Preguntas Frecuentes</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors flex justify-between items-center">
+                        ¿Este trabajo de tiempo parcial requiere experiencia?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 border-t bg-gray-50 dark:bg-gray-600">
+                        <p class="text-gray-600 dark:text-gray-300">¡No se requiere experiencia! Nuestro flujo de trabajo es simple y fácil de entender, solo necesitas una breve capacitación para comenzar.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors flex justify-between items-center">
+                        ¿Cuánto tiempo necesito trabajar cada día?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 border-t bg-gray-50 dark:bg-gray-600">
+                        <p class="text-gray-600 dark:text-gray-300">Solo necesitas invertir aproximadamente 1.5 horas al día, con horarios flexibles que puedes ajustar según tu agenda personal.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors flex justify-between items-center">
+                        ¿Cómo recibo mi pago?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 border-t bg-gray-50 dark:bg-gray-600">
+                        <p class="text-gray-600 dark:text-gray-300">Utilizamos un modelo de compensación basado en rendimiento. Tu tiempo y esfuerzo se reflejan directamente en tus ingresos, con liquidación puntual y transparente.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors flex justify-between items-center">
+                        ¿Hay beneficios después del registro?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 border-t bg-gray-50 dark:bg-gray-600">
+                        <p class="text-gray-600 dark:text-gray-300">Sí, después del registro recibirás una bonificación de bienvenida que te ayudará a entrar rápidamente en el estado de trabajo y experimentar las ventajas de nuestra plataforma.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors flex justify-between items-center">
+                        ¿A través de qué plataforma se realiza el trabajo?
+                        <i class="fas fa-chevron-down transform transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 border-t bg-gray-50 dark:bg-gray-600">
+                        <p class="text-gray-600 dark:text-gray-300">Todas las tareas y liquidaciones se realizan a través de Telegram. Por favor, asegúrate de descargar e instalar la aplicación con anticipación para completar el trabajo sin problemas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <img src="img/4.jpg" alt="Únete a nosotros" class="mx-auto rounded-2xl shadow-2xl mb-8 max-w-md floating">
+                <button onclick="d2()" class="bg-primary hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 btn-pulse">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Aplicar Ahora Mismo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Plataforma de Trabajo: Telegram</h2>
+            <p class="text-xl mb-8">Las tareas y liquidaciones se realizan en Telegram, por favor descarga e instala con anticipación.</p>
+            
+            <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-2xl p-8 mb-8">
+                <i class="fab fa-telegram text-6xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-4">Descarga Telegram</h3>
+                <p class="mb-6">Asegúrate de tener Telegram instalado para poder comenzar a trabajar inmediatamente después del registro.</p>
+            </div>
+            
+            <button onclick="d2()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 btn-pulse">
+                <i class="fas fa-rocket mr-2"></i>
+                Comenzar Ahora en Telegram
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-primary">TrabajoFlexible.es</h3>
+                    <p class="text-gray-400">Tu mejor opción para trabajos remotos flexibles y bien remunerados.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#advantages" class="hover:text-white transition-colors">Ventajas</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="Privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Términos de Uso</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Divulgación de Afiliados</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <div class="text-gray-400 space-y-2">
+                        <p><i class="fas fa-envelope mr-2"></i>info@trabajoflexible.es</p>
+                        <p><i class="fab fa-telegram mr-2"></i>@TrabajoFlexibleES</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TrabajoFlexible.es. Todos los derechos reservados.</p>
+                <p class="mt-2 text-sm">
+                    Cumplimos con todas las regulaciones españolas y europeas de protección de datos (GDPR). 
+                    Esta página contiene enlaces de afiliados. Podemos recibir una comisión por las inscripciones realizadas a través de nuestros enlaces.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer) {
+                        otherAnswer.classList.add('hidden');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current answer
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Telegram redirect function
+        function d2() {
+            // Replace with actual Telegram link
+            window.open('https://t.me/your_telegram_link', '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos de Uso - TrabajoFlexible.es</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#FF6B6B',
+                        accent: '#4ECDC4'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(17, 24, 39, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-primary">
+                    <i class="fas fa-laptop-house mr-2"></i>
+                    <a href="index.html">TrabajoFlexible.es</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-primary transition-colors duration-300">Inicio</a>
+                    <a href="privacy.html" class="hover:text-primary transition-colors duration-300">Privacidad</a>
+                    <a href="#contact" class="hover:text-primary transition-colors duration-300">Contacto</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 hover:text-primary transition-colors">Inicio</a>
+                <a href="privacy.html" class="block py-2 hover:text-primary transition-colors">Privacidad</a>
+                <a href="#contact" class="block py-2 hover:text-primary transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-primary to-purple-600 text-white pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    <i class="fas fa-file-contract mr-3"></i>
+                    Términos de Uso
+                </h1>
+                <p class="text-xl opacity-90">
+                    Condiciones que rigen el uso de nuestros servicios de trabajo flexible
+                </p>
+                <p class="text-sm mt-4 opacity-75">
+                    Última actualización: 15 de enero de 2024
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Introduction -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Introducción y Aceptación
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Bienvenido a TrabajoFlexible.es. Estos Términos de Uso (en adelante, "Términos") constituyen un acuerdo legal entre usted ("Usuario" o "usted") y TrabajoFlexible.es ("nosotros", "nuestro" o "la Empresa") que rige su acceso y uso de nuestros servicios.
+                    </p>
+                    <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
+                        <p class="text-blue-800 dark:text-blue-200">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            <strong>Al registrarse o utilizar nuestros servicios, usted acepta estar legalmente vinculado por estos Términos.</strong> Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Description -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    Descripción del Servicio
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        TrabajoFlexible.es es una plataforma que conecta a usuarios con oportunidades de trabajo flexible y remoto, específicamente en el ámbito de promoción de productos en plataformas de comercio electrónico como eBay.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg mb-3 text-blue-600">Servicios Incluidos</h3>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                                <li>• Acceso a la plataforma de tareas</li>
+                                <li>• Gestión de pagos y comisiones</li>
+                                <li>• Soporte técnico y atención al cliente</li>
+                                <li>• Formación inicial y recursos</li>
+                                <li>• Seguimiento de rendimiento</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-3 text-green-600">Actividades Principales</h3>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                                <li>• Interacciones con productos ("me gusta", favoritos)</li>
+                                <li>• Promoción orgánica de productos</li>
+                                <li>• Mejora del ranking de productos</li>
+                                <li>• Reportes de actividad</li>
+                                <li>• Cumplimiento de objetivos establecidos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration and Eligibility -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-user-plus mr-2"></i>
+                    Registro y Elegibilidad
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Requisitos de Elegibilidad</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                            <li>• Ser mayor de 25 años</li>
+                            <li>• Tener residencia legal en España o la Unión Europea</li>
+                            <li>• Poseer una cuenta bancaria a su nombre</li>
+                            <li>• Tener acceso a internet estable</li>
+                            <li>• Disponer del capital inicial requerido (168€)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Proceso de Registro</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                            <li>• Completar el formulario de registro con información veraz</li>
+                            <li>• Verificar su identidad mediante documentos oficiales</li>
+                            <li>• Aceptar estos Términos y la Política de Privacidad</li>
+                            <li>• Realizar el depósito de seguridad inicial</li>
+                            <li>• Completar la formación inicial obligatoria</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg">
+                        <p class="text-yellow-800 dark:text-yellow-200">
+                            <i class="fas fa-warning mr-2"></i>
+                            <strong>Importante:</strong> Proporcionar información falsa o inexacta resultará en la terminación inmediata de su cuenta sin derecho a reembolso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Obligations -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-tasks mr-2"></i>
+                    Obligaciones del Usuario
+                </h2>
+                <div class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-lg text-blue-600">Conducta Requerida</h3>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                                <li>• Realizar las tareas asignadas de manera profesional</li>
+                                <li>• Cumplir con los horarios y plazos establecidos</li>
+                                <li>• Mantener la confidencialidad de la información</li>
+                                <li>• Seguir las directrices y procedimientos</li>
+                                <li>• Reportar cualquier problema técnico</li>
+                                <li>• Actuar con honestidad e integridad</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-lg text-red-600">Conductas Prohibidas</h3>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                                <li>• Usar múltiples cuentas o identidades falsas</li>
+                                <li>• Automatizar tareas mediante bots o scripts</li>
+                                <li>• Compartir credenciales de acceso</li>
+                                <li>• Intentar manipular el sistema de pagos</li>
+                                <li>• Realizar actividades fraudulentas</li>
+                                <li>• Infringir derechos de terceros</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-red-100 dark:bg-red-900 p-4 rounded-lg">
+                        <h4 class="font-bold text-red-800 dark:text-red-200 mb-2">
+                            <i class="fas fa-ban mr-2"></i>
+                            Consecuencias por Incumplimiento
+                        </h4>
+                        <p class="text-red-700 dark:text-red-300">
+                            El incumplimiento de estas obligaciones puede resultar en advertencias, suspensión temporal, terminación de cuenta y/o acciones legales, según la gravedad de la infracción.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Terms -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-euro-sign mr-2"></i>
+                    Términos de Pago
+                </h2>
+                <div class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-green-50 dark:bg-green-900 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 dark:text-green-200 mb-3">
+                                <i class="fas fa-coins mr-2"></i>
+                                Capital Inicial
+                            </h3>
+                            <ul class="text-green-700 dark:text-green-300 space-y-2 text-sm">
+                                <li>• Monto requerido: 168€</li>
+                                <li>• Propósito: Verificación de cuenta y garantía</li>
+                                <li>• Reembolsable al finalizar la colaboración</li>
+                                <li>• No se utiliza para gastos operativos</li>
+                                <li>• Protegido según normativa bancaria española</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 dark:text-blue-200 mb-3">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Sistema de Comisiones
+                            </h3>
+                            <ul class="text-blue-700 dark:text-blue-300 space-y-2 text-sm">
+                                <li>• Pago por rendimiento y tareas completadas</li>
+                                <li>• Liquidaciones mensuales regulares</li>
+                                <li>• Bonificaciones por objetivos alcanzados</li>
+                                <li>• Transparencia total en cálculos</li>
+                                <li>• Transferencias bancarias seguras</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg">
+                        <h4 class="font-bold text-yellow-800 dark:text-yellow-200 mb-2">
+                            <i class="fas fa-gavel mr-2"></i>
+                            Cumplimiento Fiscal
+                        </h4>
+                        <p class="text-yellow-700 dark:text-yellow-300">
+                            Todos los pagos se realizan en cumplimiento de la Ley General Tributaria española (artículos 29 y 93) y las normativas de prevención de blanqueo de capitales. Los usuarios son responsables de declarar sus ingresos según corresponda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platform Rules -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-cogs mr-2"></i>
+                    Uso de la Plataforma
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-purple-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Acceso y Disponibilidad</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-2">
+                            La plataforma está disponible 24/7, aunque pueden ocurrir interrupciones por mantenimiento programado o emergencias técnicas.
+                        </p>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-1 text-sm">
+                            <li>• Acceso principal a través de Telegram</li>
+                            <li>• Respaldo mediante plataforma web</li>
+                            <li>• Notificaciones de mantenimiento con 24h de antelación</li>
+                            <li>• Soporte técnico disponible en horario laboral</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Seguridad de la Cuenta</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                            <li>• Mantenga sus credenciales de acceso seguras</li>
+                            <li>• No comparta su cuenta con terceros</li>
+                            <li>• Reporte inmediatamente cualquier acceso no autorizado</li>
+                            <li>• Use contraseñas fuertes y únicas</li>
+                            <li>• Active la autenticación de dos factores cuando esté disponible</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-indigo-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Propiedad Intelectual</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Todo el contenido de la plataforma, incluyendo software, diseños, textos, gráficos y marcas comerciales, es propiedad de TrabajoFlexible.es o sus licenciantes y está protegido por las leyes de propiedad intelectual.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liability and Disclaimers -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-balance-scale mr-2"></i>
+                    Limitación de Responsabilidad
+                </h2>
+                <div class="space-y-6">
+                    <div class="bg-gray-100 dark:bg-gray-600 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg mb-3">Limitaciones Generales</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+                            <li>• Los servicios se proporcionan "tal como están" sin garantías expresas o implícitas</li>
+                            <li>• No garantizamos ingresos específicos o resultados particulares</li>
+                            <li>• No somos responsables de pérdidas derivadas del uso de la plataforma</li>
+                            <li>• La responsabilidad total está limitada al capital inicial depositado</li>
+                            <li>• No somos responsables de interrupciones del servicio por causas ajenas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-red-50 dark:bg-red-900 p-4 rounded-lg">
+                            <h4 class="font-bold text-red-800 dark:text-red-200 mb-2">Exclusiones</h4>
+                            <ul class="text-red-700 dark:text-red-300 space-y-1 text-sm">
+                                <li>• Daños indirectos o consecuenciales</li>
+                                <li>• Pérdida de beneficios o oportunidades</li>
+                                <li>• Daños causados por terceros</li>
+                                <li>• Fuerza mayor o circunstancias imprevistas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg">
+                            <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2">Indemnización</h4>
+                            <p class="text-blue-700 dark:text-blue-300 text-sm">
+                                El usuario acepta indemnizar y eximir de responsabilidad a TrabajoFlexible.es por cualquier reclamación derivada del uso indebido de los servicios.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Termination -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-door-open mr-2"></i>
+                    Terminación del Servicio
+                </h2>
+                <div class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg mb-3 text-green-600">Terminación por el Usuario</h3>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+                                <li>• Puede terminar su cuenta en cualquier momento</li>
+                                <li>• Debe completar las tareas pendientes</li>
+                                <li>• Recibirá pagos pendientes según términos</li>
+                                <li>• Capital inicial será reembolsado en 30 días</li>
+                                <li>• Debe seguir el procedimiento de baja</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg mb-3 text-red-600">Terminación por la Empresa</h3>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+                                <li>• Por incumplimiento de estos términos</li>
+                                <li>• Por actividades fraudulentas o ilegales</li>
+                                <li>• Por inactividad prolongada sin aviso</li>
+                                <li>• Por razones comerciales con 30 días de aviso</li>
+                                <li>• Inmediatamente en casos graves</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg">
+                        <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2">
+                            <i class="fas fa-handshake mr-2"></i>
+                            Efectos de la Terminación
+                        </h4>
+                        <p class="text-blue-700 dark:text-blue-300">
+                            Tras la terminación, cesarán todos los derechos y obligaciones, excepto aquellas que por su naturaleza deban sobrevivir (pagos pendientes, confidencialidad, limitaciones de responsabilidad).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dispute Resolution -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-gavel mr-2"></i>
+                    Resolución de Disputas
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Procedimiento Interno</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-2">
+                            Antes de iniciar acciones legales, las partes se comprometen a intentar resolver disputas mediante:
+                        </p>
+                        <ol class="text-gray-600 dark:text-gray-300 space-y-1 text-sm list-decimal list-inside">
+                            <li>Comunicación directa con nuestro equipo de soporte</li>
+                            <li>Escalamiento a supervisión gerencial</li>
+                            <li>Mediación por tercero neutral (opcional)</li>
+                            <li>Período de reflexión de 30 días</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Jurisdicción y Ley Aplicable</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-1 text-sm">
+                            <li>• Estos términos se rigen por la ley española</li>
+                            <li>• Tribunales de Madrid tienen jurisdicción exclusiva</li>
+                            <li>• Aplicación del Código Civil y legislación mercantil</li>
+                            <li>• Cumplimiento de normativas de la UE cuando aplique</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg">
+                        <h4 class="font-bold text-yellow-800 dark:text-yellow-200 mb-2">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Resolución de Disputas para Consumidores
+                        </h4>
+                        <p class="text-yellow-700 dark:text-yellow-300 text-sm">
+                            Los usuarios considerados consumidores pueden acceder a plataformas de resolución online de litigios de la UE en: https://ec.europa.eu/consumers/odr/
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Changes to Terms -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-edit mr-2"></i>
+                    Modificaciones de los Términos
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Nos reservamos el derecho de modificar estos Términos en cualquier momento. Las modificaciones pueden deberse a cambios en la ley, mejoras del servicio, o razones comerciales.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 dark:text-blue-200 mb-2">Proceso de Notificación</h3>
+                            <ul class="text-blue-700 dark:text-blue-300 space-y-1 text-sm">
+                                <li>• Aviso por correo electrónico con 30 días de antelación</li>
+                                <li>• Publicación destacada en la plataforma</li>
+                                <li>• Notificación dentro de la aplicación</li>
+                                <li>• Resumen de cambios principales</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 dark:bg-green-900 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 dark:text-green-200 mb-2">Opciones del Usuario</h3>
+                            <ul class="text-green-700 dark:text-green-300 space-y-1 text-sm">
+                                <li>• Aceptar automáticamente continuando el uso</li>
+                                <li>• Solicitar aclaraciones sobre cambios</li>
+                                <li>• Terminar la relación contractual</li>
+                                <li>• Período de gracia de 30 días para decidir</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- General Provisions -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-list-ul mr-2"></i>
+                    Disposiciones Generales
+                </h2>
+                <div class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg mb-3">Divisibilidad</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                Si alguna disposición de estos términos es declarada inválida, el resto del acuerdo permanecerá en vigor.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg mb-3">Acuerdo Completo</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                Estos términos constituyen el acuerdo completo entre las partes y reemplazan cualquier acuerdo anterior.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg mb-3">Cesión</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                Los usuarios no pueden ceder sus derechos. Nosotros podemos ceder este acuerdo con notificación previa.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg mb-3">Supervivencia</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                Las disposiciones sobre confidencialidad, limitación de responsabilidad y ley aplicable sobreviven a la terminación.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+          
+        </div>
+    </section>
+
+ 
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

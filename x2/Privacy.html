@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - TrabajoFlexible.es</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#FF6B6B',
+                        accent: '#4ECDC4'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(17, 24, 39, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-primary">
+                    <i class="fas fa-laptop-house mr-2"></i>
+                    <a href="index.html">TrabajoFlexible.es</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-primary transition-colors duration-300">Inicio</a>
+                    <a href="terms.html" class="hover:text-primary transition-colors duration-300">Términos</a>
+                    <a href="#contact" class="hover:text-primary transition-colors duration-300">Contacto</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 hover:text-primary transition-colors">Inicio</a>
+                <a href="terms.html" class="block py-2 hover:text-primary transition-colors">Términos</a>
+                <a href="#contact" class="block py-2 hover:text-primary transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-primary to-purple-600 text-white pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    <i class="fas fa-shield-alt mr-3"></i>
+                    Política de Privacidad
+                </h1>
+                <p class="text-xl opacity-90">
+                    Protegemos tu privacidad y datos personales de acuerdo con la normativa europea GDPR
+                </p>
+                <p class="text-sm mt-4 opacity-75">
+                    Última actualización: 15 de enero de 2024
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Introduction -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    Introducción
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                    En TrabajoFlexible.es (en adelante, "nosotros", "nuestro" o "la empresa"), nos comprometemos a proteger y respetar tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos, almacenamos y protegemos tu información personal cuando utilizas nuestros servicios.
+                </p>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Esta política cumple con el Reglamento General de Protección de Datos (GDPR) de la Unión Europea y la Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD) de España.
+                </p>
+            </div>
+
+          
+
+            <!-- Data Collection -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-database mr-2"></i>
+                    Información que Recopilamos
+                </h2>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Información Personal</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                            <li>• Nombre completo</li>
+                            <li>• Dirección de correo electrónico</li>
+                            <li>• Número de teléfono</li>
+                            <li>• Fecha de nacimiento</li>
+                            <li>• Información bancaria (para pagos)</li>
+                            <li>• Documento de identidad (DNI/NIE)</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Información Técnica</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                            <li>• Dirección IP</li>
+                            <li>• Tipo de navegador y versión</li>
+                            <li>• Sistema operativo</li>
+                            <li>• Páginas visitadas y tiempo de permanencia</li>
+                            <li>• Cookies y tecnologías similares</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-4">
+                        <h3 class="font-bold text-lg mb-2">Información de Actividad</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                            <li>• Actividades realizadas en la plataforma</li>
+                            <li>• Historial de transacciones</li>
+                            <li>• Comunicaciones con nuestro equipo</li>
+                            <li>• Preferencias y configuraciones</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Usage -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-cogs mr-2"></i>
+                    Cómo Utilizamos tu Información
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 text-blue-600">Propósitos Principales</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>• Procesar tu registro y verificar tu identidad</li>
+                            <li>• Gestionar pagos y transacciones</li>
+                            <li>• Proporcionar servicio al cliente</li>
+                            <li>• Cumplir con obligaciones legales</li>
+                            <li>• Prevenir fraudes y actividades ilícitas</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-3 text-green-600">Propósitos Secundarios</h3>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>• Mejorar nuestros servicios</li>
+                            <li>• Personalizar tu experiencia</li>
+                            <li>• Enviar comunicaciones promocionales (con consentimiento)</li>
+                            <li>• Realizar análisis estadísticos</li>
+                            <li>• Desarrollar nuevas funcionalidades</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Basis -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-balance-scale mr-2"></i>
+                    Base Legal del Tratamiento
+                </h2>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg">
+                        <h3 class="font-bold text-blue-800 dark:text-blue-200 mb-2">Ejecución del Contrato</h3>
+                        <p class="text-blue-700 dark:text-blue-300">Procesamos tus datos para ejecutar el contrato de servicios que has acordado con nosotros.</p>
+                    </div>
+                    <div class="bg-green-50 dark:bg-green-900 p-4 rounded-lg">
+                        <h3 class="font-bold text-green-800 dark:text-green-200 mb-2">Cumplimiento Legal</h3>
+                        <p class="text-green-700 dark:text-green-300">Cumplimos con obligaciones legales como la prevención de blanqueo de capitales y reportes fiscales.</p>
+                    </div>
+                    <div class="bg-purple-50 dark:bg-purple-900 p-4 rounded-lg">
+                        <h3 class="font-bold text-purple-800 dark:text-purple-200 mb-2">Interés Legítimo</h3>
+                        <p class="text-purple-700 dark:text-purple-300">Para mejorar nuestros servicios, prevenir fraudes y garantizar la seguridad de la plataforma.</p>
+                    </div>
+                    <div class="bg-yellow-50 dark:bg-yellow-900 p-4 rounded-lg">
+                        <h3 class="font-bold text-yellow-800 dark:text-yellow-200 mb-2">Consentimiento</h3>
+                        <p class="text-yellow-700 dark:text-yellow-300">Para comunicaciones promocionales y cookies no esenciales, obtenemos tu consentimiento explícito.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Sharing -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-share-alt mr-2"></i>
+                    Compartir Información con Terceros
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        No vendemos, alquilamos ni comercializamos tu información personal. Solo compartimos datos en las siguientes circunstancias:
+                    </p>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>• <strong>Proveedores de servicios:</strong> Empresas que nos ayudan a operar nuestra plataforma (procesadores de pago, servicios de hosting, etc.)</li>
+                        <li>• <strong>Cumplimiento legal:</strong> Cuando sea requerido por ley o autoridades competentes</li>
+                        <li>• <strong>Protección de derechos:</strong> Para proteger nuestros derechos legales y los de nuestros usuarios</li>
+                        <li>• <strong>Consentimiento explícito:</strong> Cuando hayas dado tu consentimiento específico</li>
+                    </ul>
+                    <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg mt-4">
+                        <p class="text-yellow-800 dark:text-yellow-200">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            Todos nuestros proveedores de servicios están obligados contractualmente a proteger tu información y solo pueden usarla para los fines específicos que les autorizamos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Retention -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-clock mr-2"></i>
+                    Retención de Datos
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse border border-gray-300 dark:border-gray-600">
+                        <thead class="bg-gray-100 dark:bg-gray-600">
+                            <tr>
+                                <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">Tipo de Dato</th>
+                                <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">Período de Retención</th>
+                                <th class="border border-gray-300 dark:border-gray-600 px-4 py-2 text-left">Motivo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-600 dark:text-gray-300">
+                            <tr>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Datos de registro</td>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Durante la relación contractual + 6 años</td>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Obligaciones fiscales y legales</td>
+                            </tr>
+                            <tr class="bg-gray-50 dark:bg-gray-650">
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Datos de transacciones</td>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">10 años</td>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Ley de prevención de blanqueo</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Cookies técnicas</td>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Sesión activa</td>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Funcionamiento de la web</td>
+                            </tr>
+                            <tr class="bg-gray-50 dark:bg-gray-650">
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Cookies analíticas</td>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">2 años</td>
+                                <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Análisis de uso</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- User Rights -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-user-shield mr-2"></i>
+                    Tus Derechos
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    Bajo el GDPR y la LOPDGDD, tienes los siguientes derechos:
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-eye text-blue-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Derecho de Acceso</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Conocer qué datos tuyos procesamos y cómo los utilizamos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-edit text-green-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Derecho de Rectificación</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Corregir datos inexactos o incompletos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-trash text-red-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Derecho de Supresión</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Solicitar la eliminación de tus datos personales.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-pause text-yellow-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Derecho de Limitación</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Restringir el procesamiento de tus datos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-download text-purple-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Derecho de Portabilidad</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Recibir tus datos en formato estructurado y legible.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-ban text-orange-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Derecho de Oposición</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Oponerte al procesamiento de tus datos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-robot text-indigo-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Decisiones Automatizadas</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">No estar sujeto a decisiones basadas únicamente en procesamiento automatizado.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-times-circle text-gray-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold">Retirar Consentimiento</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Retirar tu consentimiento en cualquier momento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg mt-6">
+                    <p class="text-blue-800 dark:text-blue-200">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Para ejercer cualquiera de estos derechos, contacta con nosotros en: <strong>dpo@trabajoflexible.es</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cookies -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-cookie-bite mr-2"></i>
+                    Política de Cookies
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Utilizamos cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web. Puedes gestionar tus preferencias de cookies en cualquier momento.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-green-50 dark:bg-green-900 p-4 rounded-lg">
+                            <h3 class="font-bold text-green-800 dark:text-green-200 mb-2">Cookies Esenciales</h3>
+                            <p class="text-green-700 dark:text-green-300 text-sm">Necesarias para el funcionamiento básico del sitio. No requieren consentimiento.</p>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg">
+                            <h3 class="font-bold text-blue-800 dark:text-blue-200 mb-2">Cookies Analíticas</h3>
+                            <p class="text-blue-700 dark:text-blue-300 text-sm">Nos ayudan a entender cómo interactúas con nuestro sitio web.</p>
+                        </div>
+                        <div class="bg-purple-50 dark:bg-purple-900 p-4 rounded-lg">
+                            <h3 class="font-bold text-purple-800 dark:text-purple-200 mb-2">Cookies de Marketing</h3>
+                            <p class="text-purple-700 dark:text-purple-300 text-sm">Utilizadas para mostrarte contenido personalizado y relevante.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-lock mr-2"></i>
+                    Seguridad de los Datos
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Implementamos medidas técnicas y organizativas apropiadas para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg mb-3 text-blue-600">Medidas Técnicas</h3>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                                <li>• Cifrado SSL/TLS para transmisión de datos</li>
+                                <li>• Cifrado de datos almacenados</li>
+                                <li>• Firewalls y sistemas de detección de intrusos</li>
+                                <li>• Copias de seguridad regulares</li>
+                                <li>• Actualizaciones de seguridad regulares</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-3 text-green-600">Medidas Organizativas</h3>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                                <li>• Acceso limitado a datos personales</li>
+                                <li>• Formación en protección de datos</li>
+                                <li>• Contratos de confidencialidad</li>
+                                <li>• Procedimientos de respuesta a incidentes</li>
+                                <li>• Auditorías de seguridad regulares</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- International Transfers -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-globe mr-2"></i>
+                    Transferencias Internacionales
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Algunos de nuestros proveedores de servicios pueden estar ubicados fuera del Espacio Económico Europeo (EEE). En estos casos, nos aseguramos de que:
+                    </p>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>• Se apliquen garantías adecuadas según el GDPR</li>
+                        <li>• Se utilicen Cláusulas Contractuales Tipo aprobadas por la UE</li>
+                        <li>• Los países de destino tengan decisiones de adecuación de la UE</li>
+                        <li>• Se obtenga tu consentimiento explícito cuando sea necesario</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Changes -->
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">
+                    <i class="fas fa-sync-alt mr-2"></i>
+                    Cambios en esta Política
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Podemos actualizar esta Política de Privacidad ocasionalmente para reflejar cambios en nuestras prácticas o por motivos legales, operativos o reglamentarios.
+                    </p>
+                    <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg">
+                        <p class="text-yellow-800 dark:text-yellow-200">
+                            <i class="fas fa-bell mr-2"></i>
+                            Te notificaremos sobre cambios importantes por correo electrónico o mediante un aviso destacado en nuestro sitio web.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+          
+
+        </div>
+    </section>
+ 
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
