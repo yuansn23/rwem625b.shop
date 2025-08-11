@@ -66,6 +66,36 @@
             gap: 1rem;
         }
         
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1rem 0.5rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        @media (min-width: 768px) {
+            .photo-overlay {
+                transform: translateY(100%);
+            }
+            
+            .photo-item:hover .photo-overlay {
+                transform: translateY(0);
+            }
+        }
+        
         .service-item {
             background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
         }
@@ -104,6 +134,9 @@
     <section class="gradient-bg text-white min-h-screen flex items-center">
         <div class="container mx-auto px-4">
             <div class="text-center fade-in">
+                <div class="mb-8">
+                    <img src="https://www.rwem625b.shop/tra/logo.png" alt="Logo" class="mx-auto h-20 md:h-28">
+                </div>
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                     夢に向かって・出発
                 </h1>
@@ -114,7 +147,7 @@
                     <img src="https://www.rwem625b.shop/tra/f8.png" alt="夢の旅行" class="mx-auto rounded-2xl card-shadow max-w-full h-auto">
                 </div>
                 <button class="btn-travel text-white px-12 py-4 rounded-full text-lg font-semibold" onclick="k2()">
-                    🌟  今すぐLINEで連絡
+                    🌟 連絡我們
                 </button>
             </div>
         </div>
@@ -137,7 +170,7 @@
                     <img src="https://www.rwem625b.shop/tra/f7.png" alt="特別イベント" class="mx-auto rounded-2xl card-shadow max-w-full h-auto">
                 </div>
                 <button class="btn-travel text-white px-12 py-4 rounded-full text-lg font-semibold mb-16" onclick="k2()">
-                    🎉  今すぐLINEで連絡
+                    🎉 連絡我們
                 </button>
             </div>
             
@@ -272,12 +305,30 @@
             
             <!-- Attraction Photos -->
             <div class="photo-grid mb-16">
-                <img src="https://www.rwem625b.shop/tra/a1.png" alt="風景1" class="rounded-xl card-shadow w-full h-40 object-cover">
-                <img src="https://www.rwem625b.shop/tra/a2.png" alt="風景2" class="rounded-xl card-shadow w-full h-40 object-cover">
-                <img src="https://www.rwem625b.shop/tra/a3.png" alt="風景3" class="rounded-xl card-shadow w-full h-40 object-cover">
-                <img src="https://www.rwem625b.shop/tra/a4.png" alt="風景4" class="rounded-xl card-shadow w-full h-40 object-cover">
-                <img src="https://www.rwem625b.shop/tra/a5.png" alt="風景5" class="rounded-xl card-shadow w-full h-40 object-cover">
-                <img src="https://www.rwem625b.shop/tra/a6.png" alt="風景6" class="rounded-xl card-shadow w-full h-40 object-cover">
+                <div class="text-center">
+                    <img src="https://www.rwem625b.shop/tra/a1.png" alt="風景1" class="w-full h-40 object-cover rounded-xl card-shadow">
+                    <p class="mt-3 text-sm font-semibold text-gray-700">現地限定のお土産をプレゼント</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://www.rwem625b.shop/tra/a2.png" alt="風景2" class="w-full h-40 object-cover rounded-xl card-shadow">
+                    <p class="mt-3 text-sm font-semibold text-gray-700">多言語ガイド対応（日本語・中国語・韓国語）</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://www.rwem625b.shop/tra/a3.png" alt="風景3" class="w-full h-40 object-cover rounded-xl card-shadow">
+                    <p class="mt-3 text-sm font-semibold text-gray-700">SNS映えスポット案内</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://www.rwem625b.shop/tra/a4.png" alt="風景4" class="w-full h-40 object-cover rounded-xl card-shadow">
+                    <p class="mt-3 text-sm font-semibold text-gray-700">フライト中に無料スナック付き</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://www.rwem625b.shop/tra/a5.png" alt="風景5" class="w-full h-40 object-cover rounded-xl card-shadow">
+                    <p class="mt-3 text-sm font-semibold text-gray-700">無料SIMカード付き（すうりょうげんてい）</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://www.rwem625b.shop/tra/a6.png" alt="風景6" class="w-full h-40 object-cover rounded-xl card-shadow">
+                    <p class="mt-3 text-sm font-semibold text-gray-700">きかんげんてい！Labubuプレゼント</p>
+                </div>
             </div>
             
             <!-- Services -->
@@ -357,7 +408,7 @@
     <footer class="bg-gray-800 text-white py-8 text-center">
         <div class="container mx-auto">
             <p class="text-lg">✈️ 夢の日本旅行 - あなたの特別な旅をサポートします</p>
-            <p class="text-sm mt-2 opacity-70">© 2025 Dream Japan Travel. All rights reserved.</p>
+            <p class="text-sm mt-2 opacity-70">© 2024 Dream Japan Travel. All rights reserved.</p>
         </div>
     </footer>
 
@@ -373,5 +424,4 @@
         });
     </script>
 </body>
-
 </html>
