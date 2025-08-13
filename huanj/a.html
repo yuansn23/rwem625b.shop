@@ -259,7 +259,7 @@
                 <div class="bg-gray-700 rounded-lg p-3 max-w-xs">
                     <p class="text-sm">您好，請問您是要購買男款還是女款？</p>
                 </div>
-                <div id="genderButtons" class="flex space-x-2 mt-3">
+                <div id="genderButtons" class="flex space-x-2 mt-3 justify-center">
                     <button onclick="selectGender('男款')" class="btn-gold px-4 py-2 rounded-lg text-black font-semibold">
                         男款
                     </button>
@@ -359,7 +359,7 @@
         function showProductButtons() {
             const messagesContainer = document.getElementById('chatMessages');
             const buttonDiv = document.createElement('div');
-            buttonDiv.className = 'flex flex-wrap gap-2 mt-3';
+            buttonDiv.className = 'flex flex-wrap gap-2 mt-3 justify-center';
             buttonDiv.id = 'productButtons';
             
             buttonDiv.innerHTML = `
