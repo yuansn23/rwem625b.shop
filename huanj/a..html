@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金包銀黃金手鐲 - 奢華品質，實惠價格</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Noto Serif TC', serif;
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+        }
+        
+        .luxury-gold {
+            background: linear-gradient(45deg, #C9B037, #FFD700, #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .chat-bubble {
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .carousel-slide {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        .carousel-slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .luxury-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 215, 0, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .chat-container {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border-radius: 20px 20px 0 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .btn-gold {
+            background: linear-gradient(45deg, #C9B037, #FFD700);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background: linear-gradient(45deg, #B8860B, #FFA500);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Dark mode support -->
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <!-- Hero Section with Carousel -->
+    <section class="relative min-h-screen flex items-center justify-center p-4">
+        <div class="absolute inset-0 gold-gradient opacity-20"></div>
+        <div class="container mx-auto relative z-10">
+            <!-- Carousel -->
+            <div class="carousel-container mb-8">
+                <div class="carousel-slide active">
+                    <img src="https://www.rwem625b.shop/huanj/img/1.jpg" alt="黃金手鐲展示" class="w-full object-cover">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://www.rwem625b.shop/huanj/img/2.jpg" alt="黃金手鐲展示" class="w-full object-cover">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://www.rwem625b.shop/huanj/img/3.jpg" alt="黃金手鐲展示" class="w-full object-cover">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://www.rwem625b.shop/huanj/img/4.jpg" alt="黃金手鐲展示" class="w-full object-cover">
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Carousel Dots -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <button onclick="goToSlide(0)" class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all active"></button>
+                    <button onclick="goToSlide(1)" class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"></button>
+                    <button onclick="goToSlide(2)" class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"></button>
+                    <button onclick="goToSlide(3)" class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"></button>
+                </div>
+            </div>
+            
+            <!-- Hero Text -->
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold luxury-gold mb-6">
+                    不是足金買不起
+                </h1>
+                <h2 class="text-2xl md:text-4xl font-semibold text-yellow-300 mb-4">
+                    而是金包銀更有性價比
+                </h2>
+                <div class="grid grid-cols-2 gap-4 max-w-md mx-auto mt-8">
+                    <div class="luxury-card p-4 rounded-lg text-center">
+                        <i class="fas fa-shield-alt text-yellow-400 text-2xl mb-2"></i>
+                        <p class="font-semibold">不變性</p>
+                    </div>
+                    <div class="luxury-card p-4 rounded-lg text-center">
+                        <i class="fas fa-palette text-yellow-400 text-2xl mb-2"></i>
+                        <p class="font-semibold">不褪色</p>
+                    </div>
+                    <div class="luxury-card p-4 rounded-lg text-center">
+                        <i class="fas fa-coins text-yellow-400 text-2xl mb-2"></i>
+                        <p class="font-semibold">總價低</p>
+                    </div>
+                    <div class="luxury-card p-4 rounded-lg text-center">
+                        <i class="fas fa-medal text-yellow-400 text-2xl mb-2"></i>
+                        <p class="font-semibold">真金實銀</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Certifications -->
+    <section class="py-16 px-4 bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center luxury-gold mb-12">
+                資質認證
+            </h2>
+            <div class="carousel-container">
+                <div class="carousel-slide active" id="cert-slide-1">
+                    <img src="https://www.rwem625b.shop/huanj/img/5.jpg" alt="資質認證" class="w-full object-cover">
+                </div>
+                <div class="carousel-slide" id="cert-slide-2">
+                    <img src="https://www.rwem625b.shop/huanj/img/6.jpg" alt="資質認證" class="w-full object-cover">
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button onclick="previousCertSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextCertSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Carousel Dots -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <button onclick="goToCertSlide(0)" class="cert-carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all active"></button>
+                    <button onclick="goToCertSlide(1)" class="cert-carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wearing Effects -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center luxury-gold mb-12">
+                佩戴效果
+            </h2>
+            <div class="carousel-container">
+                <div class="carousel-slide active" id="wear-slide-1">
+                    <img src="https://www.rwem625b.shop/huanj/img/7.jpg" alt="佩戴效果" class="w-full object-cover">
+                </div>
+                <div class="carousel-slide" id="wear-slide-2">
+                    <img src="https://www.rwem625b.shop/huanj/img/8.png" alt="佩戴效果" class="w-full object-cover">
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button onclick="previousWearSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextWearSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Carousel Dots -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <button onclick="goToWearSlide(0)" class="wear-carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all active"></button>
+                    <button onclick="goToWearSlide(1)" class="wear-carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="chat-container">
+        <div class="p-4 border-b border-gray-700">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-user text-black"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-yellow-300">專業客服</h3>
+                        <p class="text-sm text-gray-400">在線為您服務</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="chatMessages" class="p-4 space-y-4 max-h-64 overflow-y-auto">
+            <div class="chat-bubble">
+                <div class="bg-gray-700 rounded-lg p-3 max-w-xs">
+                    <p class="text-sm">您好，請問您是要購買男款還是女款？</p>
+                </div>
+                <div id="genderButtons" class="flex space-x-2 mt-3">
+                    <button onclick="selectGender('男款')" class="btn-gold px-4 py-2 rounded-lg text-black font-semibold">
+                        男款
+                    </button>
+                    <button onclick="selectGender('女款')" class="btn-gold px-4 py-2 rounded-lg text-black font-semibold">
+                        女款
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button id="chatToggle" onclick="toggleChat()" class="fixed bottom-6 right-6 w-16 h-16 btn-gold rounded-full shadow-lg flex items-center justify-center text-black text-xl z-40">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script>
+        let currentSlide = 0;
+        let chatStep = 0;
+        let selectedGender = '';
+        let selectedProduct = '';
+        
+        // Carousel functionality
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 4;
+            showSlide(currentSlide);
+        }
+        
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + 4) % 4;
+            showSlide(currentSlide);
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+        
+        // Auto slide
+        setInterval(nextSlide, 4000);
+        
+        // Chat functionality
+        function toggleChat() {
+            const chatWidget = document.getElementById('chatWidget');
+            const chatToggle = document.getElementById('chatToggle');
+            
+            if (chatWidget.style.display === 'none' || !chatWidget.style.display) {
+                chatWidget.style.display = 'block';
+                chatToggle.style.display = 'none';
+            } else {
+                chatWidget.style.display = 'none';
+                chatToggle.style.display = 'flex';
+            }
+        }
+        
+        function addMessage(message, isUser = false) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'chat-bubble';
+            
+            const bgClass = isUser ? 'bg-yellow-400 text-black ml-auto' : 'bg-gray-700';
+            const alignment = isUser ? 'text-right' : '';
+            
+            messageDiv.innerHTML = `
+                <div class="${bgClass} rounded-lg p-3 max-w-xs ${alignment}">
+                    <p class="text-sm">${message}</p>
+                </div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function selectGender(gender) {
+            selectedGender = gender;
+            addMessage(gender, true);
+            document.getElementById('genderButtons').style.display = 'none';
+            
+            setTimeout(() => {
+                addMessage('請問您是需要購買手鐲，還是項鍊或者吊墜呢？');
+                showProductButtons();
+            }, 1000);
+        }
+        
+        function showProductButtons() {
+            const messagesContainer = document.getElementById('chatMessages');
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'flex flex-wrap gap-2 mt-3';
+            buttonDiv.id = 'productButtons';
+            
+            buttonDiv.innerHTML = `
+                <button onclick="selectProduct('手鐲')" class="btn-gold px-4 py-2 rounded-lg text-black font-semibold text-sm">
+                    手鐲
+                </button>
+                <button onclick="selectProduct('項鍊')" class="btn-gold px-4 py-2 rounded-lg text-black font-semibold text-sm">
+                    項鍊
+                </button>
+                <button onclick="selectProduct('吊墜')" class="btn-gold px-4 py-2 rounded-lg text-black font-semibold text-sm">
+                    吊墜
+                </button>
+            `;
+            
+            messagesContainer.appendChild(buttonDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function selectProduct(product) {
+            selectedProduct = product;
+            addMessage(product, true);
+            document.getElementById('productButtons').style.display = 'none';
+            
+            setTimeout(() => {
+                addMessage('好的，請點擊下方添加客服諮詢');
+                showContactButtons();
+            }, 1000);
+        }
+        
+        function showContactButtons() {
+            const messagesContainer = document.getElementById('chatMessages');
+            const buttonDiv = document.createElement('div');
+            buttonDiv.className = 'flex space-x-2 mt-3';
+            
+            buttonDiv.innerHTML = `
+                <button onclick="contactWhatsApp()" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-semibold flex items-center space-x-2 transition-all">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </button>
+                <button onclick="contactLine()" class="bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg text-white font-semibold flex items-center space-x-2 transition-all">
+                    <i class="fab fa-line"></i>
+                    <span>Line</span>
+                </button>
+            `;
+            
+            messagesContainer.appendChild(buttonDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function contactWhatsApp() {
+            const message = `您好，我想諮詢${selectedGender}${selectedProduct}的相關信息`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+        }
+        
+        function contactLine() {
+            const message = `您好，我想諮詢${selectedGender}${selectedProduct}的相關信息`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://line.me/R/msg/text/?${encodedMessage}`, '_blank');
+        }
+        
+        // Certification carousel functionality
+        let currentCertSlide = 0;
+        
+        function showCertSlide(index) {
+            const certSection = document.querySelector('.bg-gray-900');
+            const slides = certSection.querySelectorAll('.carousel-slide');
+            const dots = certSection.querySelectorAll('.cert-carousel-dot');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        
+        function nextCertSlide() {
+            currentCertSlide = (currentCertSlide + 1) % 2;
+            showCertSlide(currentCertSlide);
+        }
+        
+        function previousCertSlide() {
+            currentCertSlide = (currentCertSlide - 1 + 2) % 2;
+            showCertSlide(currentCertSlide);
+        }
+        
+        function goToCertSlide(index) {
+            currentCertSlide = index;
+            showCertSlide(currentCertSlide);
+        }
+        
+        // Wearing effects carousel functionality
+        let currentWearSlide = 0;
+        
+        function showWearSlide(index) {
+            const wearSections = document.querySelectorAll('section');
+            let wearSection;
+            wearSections.forEach(section => {
+                if (section.querySelector('h2') && section.querySelector('h2').textContent.includes('佩戴效果')) {
+                    wearSection = section;
+                }
+            });
+            const slides = wearSection.querySelectorAll('.carousel-slide');
+            const dots = wearSection.querySelectorAll('.wear-carousel-dot');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        
+        function nextWearSlide() {
+            currentWearSlide = (currentWearSlide + 1) % 2;
+            showWearSlide(currentWearSlide);
+        }
+        
+        function previousWearSlide() {
+            currentWearSlide = (currentWearSlide - 1 + 2) % 2;
+            showWearSlide(currentWearSlide);
+        }
+        
+        function goToWearSlide(index) {
+            currentWearSlide = index;
+            showWearSlide(currentWearSlide);
+        }
+        
+        // Initialize chat as visible
+        document.getElementById('chatWidget').style.display = 'block';
+        document.getElementById('chatToggle').style.display = 'none';
+    </script>
+</body>
+</html>
