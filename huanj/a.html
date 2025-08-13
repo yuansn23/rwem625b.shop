@@ -205,7 +205,7 @@
     </section>
 
     <!-- Wearing Effects -->
-    <section class="py-16 px-4">
+    <section class="py-16 px-4 pb-80">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center luxury-gold mb-12">
                 佩戴效果
@@ -284,8 +284,9 @@
         
         // Carousel functionality
         function showSlide(index) {
-            const slides = document.querySelectorAll('.carousel-slide');
-            const dots = document.querySelectorAll('.carousel-dot');
+            const heroSection = document.querySelector('section');
+            const slides = heroSection.querySelectorAll('.carousel-slide');
+            const dots = heroSection.querySelectorAll('.carousel-dot');
             
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
@@ -352,7 +353,7 @@
             setTimeout(() => {
                 addMessage('請問您是需要購買手鐲，還是項鍊或者吊墜呢？');
                 showProductButtons();
-            }, 1000);
+            }, 800);
         }
         
         function showProductButtons() {
@@ -385,7 +386,7 @@
             setTimeout(() => {
                 addMessage('好的，請點擊下方添加客服諮詢');
                 showContactButtons();
-            }, 1000);
+            }, 800);
         }
         
         function showContactButtons() {
@@ -394,11 +395,11 @@
             buttonDiv.className = 'flex space-x-2 mt-3';
             
             buttonDiv.innerHTML = `
-                <button onclick="contactWhatsApp()" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-semibold flex items-center space-x-2 transition-all">
+                <button onclick="contactWhatsApp()" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-semibold flex items-center justify-center space-x-2 transition-all flex-1">
                     <i class="fab fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </button>
-                <button onclick="contactLine()" class="bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg text-white font-semibold flex items-center space-x-2 transition-all">
+                <button onclick="contactLine()" class="bg-green-400 hover:bg-green-500 px-4 py-2 rounded-lg text-white font-semibold flex items-center justify-center space-x-2 transition-all flex-1">
                     <i class="fab fa-line"></i>
                     <span>Line</span>
                 </button>
