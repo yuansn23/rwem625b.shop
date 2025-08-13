@@ -407,12 +407,14 @@
         function contactWhatsApp() {
             const message = `您好，我想諮詢${selectedGender}${selectedProduct}的相關信息`;
             const encodedMessage = encodeURIComponent(message);
+           //  ttq.track('Contact');
             window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
         }
         
         function contactLine() {
             const message = `您好，我想諮詢${selectedGender}${selectedProduct}的相關信息`;
             const encodedMessage = encodeURIComponent(message);
+           //  ttq.track('Contact');
             window.open(`https://line.me/R/msg/text/?${encodedMessage}`, '_blank');
         }
         
