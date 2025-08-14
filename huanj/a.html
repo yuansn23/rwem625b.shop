@@ -437,15 +437,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         function contactWhatsApp() {
             const message = `您好，我想諮詢${selectedGender}${selectedProduct}的相關信息`;
             const encodedMessage = encodeURIComponent(message);
-        ttq.track('Contact');
             window.open(`https://wa.me/85254155721`, '_blank');
+              ttq.track('Contact');
+             ttq.track('Purchase');
+             ttq.track('CompleteRegistration');
         }
         
         function contactLine() {
             const message = `您好，我想諮詢${selectedGender}${selectedProduct}的相關信息`;
-            const encodedMessage = encodeURIComponent(message);
-          ttq.track('Contact');
+            const encodedMessage = encodeURIComponent(message); 
             window.open('https://line.me/ti/p/MZDFRBhBbz', '_blank');
+              ttq.track('Contact');
+             ttq.track('Purchase');
+             ttq.track('CompleteRegistration');
         }
         
         // Certification carousel functionality
